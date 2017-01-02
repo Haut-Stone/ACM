@@ -40,7 +40,7 @@ int main()
 {
 	char line[10010];
 	int a[27] = {0};
-	long long int product = 0;
+	long long product = 0;
 	int maxNumber;
 	int maxPosition;
 	scanf("%s", line);
@@ -63,6 +63,6 @@ int main()
 		temp--;
 		a[maxPosition] = 0;
 	}
-	printf("%d\n", product);
+	printf("%lld\n", product);
 	return 0;
 }

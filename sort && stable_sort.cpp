@@ -24,7 +24,7 @@ typedef struct
 
 bool Comp(Node a, Node b)
 {
-	if(a.k>b.k || a.k==b.k && strcmp(a.str, b.str)>0)
+	if((a.k>b.k || a.k==b.k) && strcmp(a.str, b.str)>0)
 		return 0;
 	return 1;
 }
