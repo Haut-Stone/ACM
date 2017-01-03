@@ -14,7 +14,7 @@
 
 int main(void)
 {
-    int T,n,i;
+    int T,i;
     char a[1100];
     scanf("%d",&T);
     while(T--)

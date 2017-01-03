@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    int T,n,i,j;
+    int T,n,i;
     int a[1100];
     scanf("%d",&T);
     while(T--)
