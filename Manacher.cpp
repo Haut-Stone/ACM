@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-16 18:14:18
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-01-16 21:33:29
+* @Last Modified time: 2017-01-16 22:04:47
 */
 #include <iostream>
 #include <cstdio>
@@ -18,11 +18,11 @@ using namespace std;
 
 const int maxn = 3e5;
 
-char Str[maxn];
-char test[maxn];
+char Str[maxn];//初始字符串
+char test[maxn];//修改后的字符串
 int len1;
 int len2;
-int p[maxn];
+int p[maxn];//标记数组
 
 int manacher();
 int init();
@@ -59,6 +59,7 @@ int manacher()
 	int ans = 0;
 	int max = 0;
 	for(int i=1;i<len2;i++){
+		//如果现在的位置，在最大回文子列的内部。
 		if(max > i){	
 			p[i] = min(p[2*id - i], max - i);
 		}else{
@@ -70,6 +71,7 @@ int manacher()
 			id = i;
 		}
 	}
+	//最后扫一遍
 	for(int i=0;i<len2;i++){
 		if(ans < p[i]) ans = p[i];
 	}
