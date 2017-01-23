@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-22 11:12:17
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-01-23 13:52:08
+* @Last Modified time: 2017-01-23 14:53:35
 */
 #include <iostream>
 #include <cstdio>
@@ -16,12 +16,8 @@
 #include <cstring>
 using namespace std;
 
-
-
-int main(void)
+int main()
 {
-	char string[110];
-	scanf("%s", string);
-	
-	return 0;
+
+    return 0;
 }
