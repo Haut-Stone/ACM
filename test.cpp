@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-22 11:12:17
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-01-23 14:53:35
+* @Last Modified time: 2017-01-23 19:12:43
 */
 #include <iostream>
 #include <cstdio>
@@ -16,8 +16,12 @@
 #include <cstring>
 using namespace std;
 
+
+const int N = 10e6;
+
+
 int main()
 {
-
+	
     return 0;
 }
