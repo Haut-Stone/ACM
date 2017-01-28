@@ -7,38 +7,48 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-22 11:12:17
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-01-25 20:02:09
+* @Last Modified time: 2017-01-28 19:07:35
 */
 #include <iostream>
 #include <cstdio>
 #include <algorithm>
 #include <cmath>
 #include <cstring>
+#include <string>
 using namespace std;
 
-const int N = 110;
-
+const int N = 10100;
+//
+//今天是新春大作战专场
+//
+string s;
 int main()
 {
-	int n;
-	char str[N];
-	int index[N];
-	scanf("%d", &n);
-	getchar();
-	while(n--){
-		gets(str);
-		for(int i=1;i<=strlen(str);i++){
-			scanf("%d", &index[i]);
-		}
-		getchar();
-		for(int i=1;i<=strlen(str);i++){
-			for(int j=1;j<=strlen(str);j++){
-				if(i == index[j]){
-					printf("%c", str[j-1]);
-				}
-			}
-		}
-		printf("\n");
-	}
-    return 0;
+	int n,p,q;  
+    cin>>n>>p>>q;  
+    cin>>s;  
+    for(int i=0;i<150;i++)  
+    {  
+        for(int j=0;j<150;j++)  
+        {  
+            if(i*p+j*q==s.size())  
+            {  
+                cout<<i+j<<endl;  
+                for(int k=0;k<i;k++)  
+                {  
+                    for(int t=0;t<p;t++)  
+                        cout<<s[k*p+t];  
+                    cout<<endl;  
+                }  
+                for(int k=0;k<j;k++)  
+                {  
+                    for(int t=0;t<q;t++)  
+                        cout<<s[i*p+k*q+t];  
+                    cout<<endl;  
+                }  
+                return 0;  
+            }  
+        }  
+    }  
+    return puts("-1"); 
 }
