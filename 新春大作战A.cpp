@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-27 22:44:29
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-01-27 23:30:20
+* @Last Modified time: 2017-01-29 11:32:55
 */
 //题意：
 //今天是周三，这周的第三天，明天是2015的最后一天。
@@ -17,6 +17,7 @@
 //可以选择一种计划
 //Input：
 //按周的存法or按月的存法
+//水题
 /*
 2016每周数据：
 all...42
