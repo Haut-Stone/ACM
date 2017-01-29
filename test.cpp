@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-22 11:12:17
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-01-28 23:08:25
+* @Last Modified time: 2017-01-28 23:33:42
 */
 #include <iostream>
 #include <cstdio>
@@ -21,13 +21,24 @@ const int N = 101;
 //
 //今天是新春大作战专场
 //
-string s;
+
+long long front;
+long long back;
+long long ans = 0;
+
+void dfs(long long x, int flag)
+{
+	if(x>back) return;
+	if(x>=front && x<=back && flag == 1){
+		ans++;
+	}
+	if(flag==0) dfs(x*2, 1);
+	dfs(x*2+1, flag);//这应该是尾递归吧。
+}
 int main()
 {
-	int n;
-	int a[N];
-	scanf("%d", &n);
-	for(int i=0;i<n;i++){
-		
-	}
+	cin>>front>>back;
+	dfs(1, 0);
+	cout<<ans<<endl;
+	return 0;
 }
