@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-28 17:05:11
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-01-28 18:49:19
+* @Last Modified time: 2017-01-29 12:10:28
 */
 #include <iostream>
 #include <cstdio>
@@ -19,7 +19,10 @@
 using namespace std;
 
 //直接暴力是会超时的，所以要，用dfs
-//这TM居然用的是深搜。。。。。
+//其实这道题是枚举
+//深搜是用来完成枚举的一种手段
+//之前的枚举之所以会超时，是因为他枚举了所有的数字，之后的深搜不超时是因为他直接枚举的是符合条件的二进制数。
+//题目见网址
 //http://codeforces.com/problemset/problem/611/B
 
 long long front;
