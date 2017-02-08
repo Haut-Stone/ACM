@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-22 11:12:17
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-01-29 23:28:25
+* @Last Modified time: 2017-02-08 11:19:50
 */
 #include <iostream>
 #include <cstdio>
@@ -17,44 +17,37 @@
 #include <string>
 using namespace std;
 
-//
-//今天是新春大作战专场
-//
-const int N = 10;
-char myMap[N][N];
-int colUsed[N];
-int n, k;
-int ans;
-
-void dfs(int row, int k)
-{
-    if(k==0){
-        ans++;
-        return;
-    }
-    for(int i=row;i<n;i++){
-        for(int j=0;j<n;j++){
-            if(myMap[i][j] == '.' || colUsed[j] == 1) continue;
-            colUsed[j] = 1;
-            dfs(i+1, k-1);
-            colUsed[j] = 0;
-        }
-    }
-}
-
 int main()
 {
-    while(cin>>n>>k &&(n!=-1 && k!=-1)){
-        getchar();
-        ans = 0;
-        for(int i=0;i<n;i++){
-            for(int j=0;j<n;j++){
-                cin>>myMap[i][j];
-            }
-            getchar();
-        }
-        dfs(0, k);
-        cout<<ans<<endl;
+    int digit1, digit2;
+    int a[100],b[100];
+    int i, j, k, sum = 0;
+    scanf("%d %d", &digit1, &digit2);
+    for(i = 0; i < digit1; i++){
+        scanf("%d", &a[i]);
     }
+    for(j = 0; j < digit2; j++){
+        scanf("%d", &b[j]);
+    }
+    for(i = 0;i < digit1;i++){
+        if(b[0] == a[i]){
+            k = i;
+            i++;
+            for(j = 1;j < digit2;j++,i++){
+                if(b[j]==a[i]){
+                    sum++;
+                }   
+                else{
+                    break;
+                }
+            }
+        }
+        if(j == digit2)
+        break;
+    }
+    if(j == digit2 && sum != 0)
+        printf("%d\n",k);
+    else
+    printf("No Answer\n");
     return 0;
 }
