@@ -7,11 +7,11 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-02 13:40:21
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-02 14:58:56
+* @Last Modified time: 2017-03-07 16:52:31
 */
 
 //http://vj.sdutacm.org/contest/view.action?cid=62898#problem/A
-
+//一维的简单搜索
 #include <iostream>
 #include <cstdio>
 #include <algorithm>
@@ -32,7 +32,6 @@ typedef struct Node
 
 
 int Ibegin, Iend;
-
 
 int bfs(int b, int e)
 {
