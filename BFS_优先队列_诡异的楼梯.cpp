@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-09 17:31:07
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-09 20:37:41
+* @Last Modified time: 2017-03-15 13:14:20
 */
 
 //http://vj.sdutacm.org/contest/view.action?cid=62917#problem/A
@@ -38,7 +38,11 @@ struct Node
 	int x;
 	int y;
 	int steps;
-	friend bool operator < (const Node &a, const Node &b) //这个的用处还有待考证.看来是用于解决关于优先队列的问题。
+	//优先队列处理结构体优先级关系时的模版。。注意无法重载大于号。
+	//优先队列里自带的排序，和sort里的自带排序效果是相反的。
+	//用来定义优先级,按步数的多少来确定优先级。
+	//优先队列的本质时heap.
+	friend bool operator < (Node a, Node b)//括号内用(const Node &a, const Node &b)在处理大数据是时可以提高效率。
     {  
         return a.steps > b.steps;  
     }

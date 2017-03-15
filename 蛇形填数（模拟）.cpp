@@ -21,7 +21,6 @@ int main(int argc, char const *argv[])
             printf("%3d ", a[x][y]);
         }
         printf("\n");
-    }
-    
+    } 
     return 0;
 }
