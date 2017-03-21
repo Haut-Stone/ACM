@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-29 17:10:06
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-01-29 23:15:47
+* @Last Modified time: 2017-03-21 18:57:59
 */
 #include <iostream>
 #include <cstdio>
@@ -37,7 +37,7 @@ void dfs(int row, int k)//逐行搜索。。
 	for(int i=row;i<n;i++){
 		for(int j=0;j<n;j++){
 			if(myMap[i][j] == '.' || cluUsed[j] == 1){
-				continue;
+				continue;//剪枝
 			}
 			cluUsed[j] = 1;//标记该列是否已经被占用。
 			dfs(i+1, k-1);
