@@ -7,7 +7,7 @@
 * @Author: li
 * @Date:   2017-03-05 18:53:57
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-05 20:40:12
+* @Last Modified time: 2017-03-28 17:06:05
 */
 
 //http://vj.sdutacm.org/contest/view.action?cid=62898#problem/E
@@ -49,7 +49,7 @@ void dfs(int row, int col)
         }else{//如果之前这个位置是空的
             for(int i=1;i<=9;i++){//搜索都有哪些可用数字（从1->9遍历）
                 if(rowBook[row][i] == 0 && colBook[col][i] == 0 && latticeBook[row/3*3+col/3][i] == 0){//根据i,j标定它所属的行，列，和所在的小矩阵,如果这个数字从未出现过。
-                    int s = row/3*3+col/3;
+                    int s = row/3*3+col/3;//这里是判断数独的关键！！！！
                     Imap[row][col] = i;//填入数字
                     rowBook[row][i] = 1;//改变标记状态为已出现。
                     colBook[col][i] = 1;
