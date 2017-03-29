@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-22 11:12:17
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-02-08 17:32:40
+* @Last Modified time: 2017-03-29 20:38:15
 */
 #include <iostream>
 #include <cstdio>
@@ -17,11 +17,3 @@
 #include <string>
 using namespace std;
 
-#define N 1000
-int main()
-{
-    for(int i=0;i<N;i++){
-    	printf("%d\\", i);
-    }
-    return 0;
-}
