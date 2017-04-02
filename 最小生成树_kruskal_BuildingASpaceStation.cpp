@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-31 16:49:49
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-31 17:27:03
+* @Last Modified time: 2017-03-31 22:08:27
 */
 #include <algorithm>
 #include <iostream>
@@ -88,7 +88,7 @@ bool hadUnite(int x, int y)
 	if(x == y){
 		return true;
 	}else{
-		parents[x] = y;//如果不是同一个集合的，则将两个点连起来。
+		parents[y] = x;//如果不是同一个集合的，则将两个点连起来。
 	}
 	return false;
 }
