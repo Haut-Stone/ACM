@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-22 11:12:17
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-04-08 22:32:16
+* @Last Modified time: 2017-04-12 22:31:46
 */
 #include <algorithm>
 #include <iostream>
@@ -21,47 +21,20 @@
 using namespace std;
   
 #define INPUT_TEST freopen("in.txt", "r", stdin)
-#define max4(a,b,c,d) max(max(a,b),max(c,d))
 
-const int N = 110;
-
-int row, col;
+int a, b, c;
 int ans;
-int Imap[N][N];
-int dp[2*N][N][N];
 
-void read()
+int main(void)
 {
-    cin>>row>>col;
-    for(int i=1;i<=row;i++){
-        for(int j=1;j<=col;j++){
-            scanf("%d", &Imap[i][j]);
-        }
-    }
-    memset(dp, 0, sizeof(dp));
-}
-
-int main()
-{   
-    INPUT_TEST; 
-
+    INPUT_TEST;
     int T;
     cin>>T;
     while(T--){
-        read();
-        dp[0][1][1] = Imap[1][1];
-        for(int k=1; k<=row+col-2; k++){
-            for(int i=1; i<=k+1; i++){
-                for(int j=1; j<=k+1; j++){
-                    dp[k][i][j] = max4(dp[k-1][i][j], dp[k-1][i-1][j], dp[k-1][i][j-1], dp[k-1][i-1][j-1]);//找出4种状态中，最好的。步数是用来算y的
-                    if(i!=j)//如果走到了同一个格子
-                        dp[k][i][j]+=Imap[i][k+2-i]+Imap[j][k+2-j];
-                    else
-                        dp[k][i][j]+=Imap[i][k+2-i];//被走过一次后，第二次就没有金子了
-                }
-            }
-        }
-        printf("%d\n", dp[row+col-2][row][row]);
+        cin>>a>>b>>c;
+        a/=2;
+        c/=4;
+        ans = a + b - c;
+        printf("%d\n", ans);
     }
-    return 0;
 }
