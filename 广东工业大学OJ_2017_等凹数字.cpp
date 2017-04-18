@@ -5,12 +5,10 @@
 * Copyright 2017 SJH. All rights reserved.
 *
 * @Author: Haut-Stone
-* @Date:   2017-01-22 11:12:17
+* @Date:   2017-04-15 13:28:14
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-04-18 17:51:52
+* @Last Modified time: 2017-04-15 14:34:29
 */
-
-
 #include <algorithm>
 #include <iostream>
 #include <cstring>
@@ -22,13 +20,34 @@
 #include <map>
 #include <set>
 using namespace std;
+
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 
-const int N = 1000;
+long long L, R;
+int ans;
+int temp;
+
+void dfs(int L, int R,int index)
+{
+	if(L == R){
+		return;
+	}
+
+	if(temp <= L && temp >= R) ans++;
+
+	for(int i=0;i<=9;i++){
+		
+	}
+}
 
 int main(void)
-{	
+{
 	INPUT_TEST;
-	
-	return 0;
+	int T;
+	cin>>T;
+	while(T--){
+		scanf("%lld%lld", &L, &R);
+		dfs(L, R, 0);
+	}
+    return 0;
 }
