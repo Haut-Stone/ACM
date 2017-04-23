@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-31 19:50:15
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-31 23:20:35
+* @Last Modified time: 2017-04-21 22:30:12
 */
 
 //https://vjudge.net/contest/156294?#problem/G
@@ -25,6 +25,9 @@
 #include <map>
 #include <set>
 using namespace std;
+
+#define INPUT_TEST freopen("in.txt", "r", stdin)
+
 
 const int LEN = 505;
 
@@ -107,6 +110,8 @@ void read()
 
 int main(void)
 {
+
+	INPUT_TEST;
 	int T;
 	cin>>T;//数据的组数
 	while(T--){
