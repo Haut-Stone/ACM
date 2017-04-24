@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-04-22 19:25:30
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-04-23 14:58:17
+* @Last Modified time: 2017-04-23 19:52:07
 */
 
 //这里是校赛的补题。http://218.28.220.249:50015/JudgeOnline/contest.php?cid=1020
@@ -18,9 +18,9 @@
 #define E false
 #define F false
 #define G false
-#define H true
+#define H false
 #define I false
-#define J false
+#define J true
 #include <algorithm>
 #include <iostream>
 #include <cstring>
@@ -54,11 +54,11 @@ const int INF = 99999999;
 #if D
 
 #endif
-
+//某科学的打麻将
 #if E
 
 #endif
-
+//Hmz的女装
 #if F
 
 #endif
@@ -340,7 +340,67 @@ int main(void)
 	return 0;
 }	
 #endif
-
+//爱看电视的LsF...枚举╮(￣▽￣"")╭（代码丑的我都看不下去了）
 #if J
+/*
+10 1 100
+0 1 2 3 4 5 6 7 8 9
+9 1 100
+0 1 2 3 4 5 6 7 8
+ */
+int badKeyNumber;
+int beginX;
+int endX;
+int isBadKey[N];
+int minDis;
 
+void init()
+{
+	memset(isBadKey, 0 , sizeof(isBadKey));
+	minDis = 0;
+}
+
+int main(void)
+{
+	INPUT_TEST;
+	while(~scanf("%d%d%d", &badKeyNumber, &beginX, &endX)){
+		init();
+		int temp;
+		for(int i=0;i<badKeyNumber;i++){
+			scanf("%d", &temp);
+			isBadKey[temp] = 1;
+		}
+		minDis = abs(endX - beginX);
+		vector <int> key;
+		for(int i=0;i<=9;i++){
+			if(!isBadKey[i]) key.push_back(i);
+		}
+		for(int i=0;i<key.size();i++){
+			int temp = abs(endX - key[i]) + 1;
+			if(temp < minDis) minDis = temp; 
+			for(int j=0;j<key.size();j++){
+				int temp = abs(endX - (key[i]*10 + key[j])) + 2;
+				if(temp < minDis) minDis = temp; 
+				for(int k=0;k<key.size();k++){
+					int temp = abs(endX - (key[i]*100 + key[j]*10 + key[k])) + 3;
+					if(temp < minDis) minDis = temp;
+					for(int v=0;v<key.size();v++){
+						int temp = abs(endX - (key[i]*1000 + key[j]*100 + key[k]*10 + key[v])) + 4;
+						if(temp < minDis) minDis = temp;
+						for(int s=0;s<key.size();s++){
+							int temp = abs(endX - (key[i]*10000 + key[j]*1000 + key[k]*100 + key[v]*10 + key[s])) + 5;
+							if(temp < minDis) minDis = temp;
+							for(int b=0;b<key.size();b++){
+								int temp = abs(endX - (key[i]*100000 + key[j]*10000 + key[k]*1000 + key[v]*100 + key[s]*10 + key[b])) + 6;
+								if(temp < minDis) minDis = temp;
+							}
+						}
+					} 
+				}
+			}
+		}
+		cout<<minDis<<endl;
+	}
+	return 0;
+}
 #endif
