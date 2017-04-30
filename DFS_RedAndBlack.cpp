@@ -7,10 +7,10 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-02 19:44:22
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-05 19:20:52
+* @Last Modified time: 2017-04-30 17:07:58
 */
 
-//http://vj.sdutacm.org/contest/view.action?cid=62898#problem/E
+//http://poj.org/problem?id=1979
 //最简单的深搜，搜到头直接返回，没有特殊情况。
 
 #include <iostream>
@@ -45,6 +45,7 @@ void dfs(int x, int y)
 
 int main(void)
 {
+	
 	int beginX = 0, beginY = 0;
 	char temp;
 	while(scanf("%d%d", &col, &row), row != 0 && col != 0){
