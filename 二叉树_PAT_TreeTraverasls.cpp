@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-04-28 17:03:40
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-04-28 17:04:54
+* @Last Modified time: 2017-05-04 23:02:14
 */
 
 //PAT A 1020 Tree Traversals
@@ -54,7 +54,7 @@ void read()
 	}
 }
 
-//致敬Re:Creater
+//致敬Re:Creators
 Node* ReCreater(int postL, int postR, int inL, int inR)
 {
 	if(postL > postR){

@@ -7,7 +7,7 @@
 * @Author: li
 * @Date:   2017-03-05 18:53:57
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-28 17:06:05
+* @Last Modified time: 2017-05-04 21:19:45
 */
 
 //http://vj.sdutacm.org/contest/view.action?cid=62898#problem/E
@@ -20,6 +20,8 @@
 #include <map>
 #include <vector>
 using namespace std;
+
+#define INPUT_TEST freopen("in.txt", "r", stdin)
 
 const int N = 40;
 char rawMap[N][N];
@@ -73,6 +75,8 @@ void dfs(int row, int col)
 
 int main(void)
 {
+    INPUT_TEST;
+
     int T;
     cin>>T;
     while(T--){

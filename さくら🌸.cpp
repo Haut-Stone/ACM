@@ -7,7 +7,7 @@
  * @Author: Haut-Stone
  * @Date:   2017-01-22 11:12:17
  * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-05-03 22:11:04
+ * @Last Modified time: 2017-05-10 19:00:22
  */
 
 #include <algorithm>
@@ -24,47 +24,65 @@ using namespace std;
 
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 
-const int N = 1111;
-
-int dp[N];
+const int N = 100;
 
 struct Node
 {
-	int l;
-	int r;
-	int v;
-}a[N];
+	int to;
+	int dis;
+};
 
+vector<Node> edge[N];
+int farthest;//最远的叶子节点
+int ans;
+int n;
 
-bool cmp(const Node &a, const Node &b)
+void init()
 {
-	return a.l < b.l;
+	for(int i=0;i<N;i++){
+		edge[i].clear();
+	}
+	ans = 0;
+}
+
+void dfs(int x, int preX, int dis)
+{
+	for(int i=0;i<edge[x].size();i++){
+		int nextX = edge[x][i].to;//将要去往的点
+		if(nextX == preX){//跳过来时的节点
+			continue;
+		}
+		dfs(nextX, x, dis + edge[x][i].dis);
+	}
+	if(dis > ans){
+		ans = dis;
+		farthest = x;
+	}
+}
+
+void read()
+{
+	for(int i=0;i<n-1;i++){
+		int u;
+		int v;
+		Node temp; 
+		scanf("%d%d%d", &u, &v, &temp.dis);
+		temp.to = v;
+		edge[u].push_back(temp);
+		temp.to = u;
+		edge[v].push_back(temp);
+	}
 }
 
 int main(void)
 {
-	INPUT_TEST;
-
-	int n;
-	int m;
-	int r;
-	scanf("%d%d%d", &n, &m, &r);
-	for(int i=0;i<m;i++){
-		scanf("%d%d%d", &a[i].l, &a[i].r, &a[i].v);
+	// INPUT_TEST;
+	while(~scanf("%d", &n)){
+		init();
+		read();
+		dfs(1, -1, 0);
+		dfs(farthest, -1, 0);
+		printf("%.1f\n", (double)ans / 2);
 	}
-	sort(a, a+m, cmp);
-
-	int ans = 0;
-	for(int i=0;i<m;i++){
-		int iMax = 0;
-		for(int j=0;j<i;j++){
-			if(a[j].r+r <= a[i].l && iMax < dp[j]){
-				iMax = dp[j];
-			}
-		}
-		dp[i] = iMax + a[i].v;
-		ans = max(ans, dp[i]);
-	}
-	cout<<ans<<endl;
 	return 0;
 }

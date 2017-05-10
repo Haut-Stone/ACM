@@ -5,25 +5,26 @@
 * Copyright 2017 SJH. All rights reserved.
 *
 * @Author: Haut-Stone
-* @Date:   2017-01-28 17:51:01
+* @Date:   2017-05-10 18:20:54
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-01-28 18:00:28
+* @Last Modified time: 2017-05-10 18:20:54
 */
-#include <iostream>
-#include <cstdio>
 #include <algorithm>
-#include <cmath>
+#include <iostream>
 #include <cstring>
-#include <map>
 #include <vector>
+#include <cstdio>
+#include <queue>
+#include <stack>
+#include <cmath>
+#include <map>
+#include <set>
 using namespace std;
 
-//这题就是纯数学。。。
+#define INPUT_TEST freopen("in.txt", "r", stdin)
 
 int main(void)
 {
-	int n;
-	while(~scanf("%d",&n))
-        printf("%d\n",n%2?0:(n/2-1)/2);
+
     return 0;
 }
