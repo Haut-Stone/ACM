@@ -7,8 +7,13 @@
  * @Author: Haut-Stone
  * @Date:   2017-01-22 11:12:17
  * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-05-20 12:40:49
+ * @Last Modified time: 2017-05-21 22:01:48
  */
+
+//LightOJ 1030
+//求期望值，具体的题解见印象笔记。
+//该题的数学期望 = 每一点的概率 * 到该点的值
+
 #include <algorithm>
 #include <iostream>
 #include <cstring>
@@ -22,43 +27,11 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-const int N = 1010;
+const int N = 10100;
 
-int dp[N][N];
-char str[N][N];
-int n;
 
 int main(void)
 {
-	while(scanf("%d", &n), n != 0){
-		for(int i=0;i<n;i++){
-			scanf("%s", str[i]);
-		}
-		int ans = 1;
-		for(int i=0;i<n;i++){
-			for(int j=0;j<n;j++){
-				if(i == 0 || j == n-1){
-					dp[i][j] = 1;
-					continue;
-				}
-				int t1 = i;
-				int t2 = j;
-				while(t1 >= 0 && t2 < n && str[t1][j] == str[i][t2]){
-					t1--;
-					t2++;
-				}
-				int t = i - t1;
-				if(t > dp[i-1][j+1] + 1){
-					dp[i][j] = dp[i-1][j+1] + 1;
-				}else{
-					dp[i][j] = t;
-				}
-				ans = max(ans, dp[i][j]);
-			}
-		}
-		cout<<ans<<endl;
-	}
+	
 	return 0;
 }
-
-

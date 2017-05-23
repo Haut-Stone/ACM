@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-05-06 17:31:31
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-05-06 19:43:42
+* @Last Modified time: 2017-05-20 13:02:38
 */
 #include <algorithm>
 #include <iostream>
@@ -63,29 +63,29 @@ void solve()
 			continue;
 		}
 		f1[i]=sum1;   //i之前的n/2的最小值
-	    if(p[i].c>=q1.top().c) continue;
-	    sum1-=q1.top().c;  //如果i比当前堆中最大元素小，需要更新
-	    q1.pop();
-	    sum1+=p[i].c;
-	    q1.push(p[i]);
+		if(p[i].c>=q1.top().c) continue;
+		sum1-=q1.top().c;  //如果i比当前堆中最大元素小，需要更新
+		q1.pop();
+		sum1+=p[i].c;
+		q1.push(p[i]);
 	}
 	for(int i=C-1;i>=0;i--){
-	    if(i>C-1-N/2){
-	        q2.push(p[i]);
-	        sum2+=p[i].c;
-	        continue;
-	    }
-	    f2[i]=sum2;
-	    if(p[i].c>=q2.top().c) continue;
-	    sum2-=q2.top().c;
-	    q2.pop();
-	    sum2+=p[i].c;
-	    q2.push(p[i]);
+		if(i>C-1-N/2){
+			q2.push(p[i]);
+			sum2+=p[i].c;
+			continue;
+		}
+		f2[i]=sum2;
+		if(p[i].c>=q2.top().c) continue;
+		sum2-=q2.top().c;
+		q2.pop();
+		sum2+=p[i].c;
+		q2.push(p[i]);
 	}
 	for(int i=C-1-N/2;i>=N/2;i--){
-	    if(f1[i]+f2[i]+p[i].c<=F){
-	        ans=p[i].s;break;
-	    }
+		if(f1[i]+f2[i]+p[i].c<=F){
+			ans=p[i].s;break;
+		}
 	}
 	printf("%d\n",ans);
 }
@@ -99,5 +99,5 @@ int main(void)
 		}
 		solve();
 	}
-    return 0;
+	return 0;
 }
