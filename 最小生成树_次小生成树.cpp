@@ -7,10 +7,10 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-31 19:50:15
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-04-21 22:30:12
+* @Last Modified time: 2017-05-23 17:48:44
 */
 
-//https://vjudge.net/contest/156294?#problem/G
+//POJ 1679
 //这道题WA了3次，本来以为是逻辑问题，谁知道是sort了多次，造成超时了，也不知道提示TLE，还以为是咋回事呢。。。。坑。
 //
 
@@ -111,7 +111,7 @@ void read()
 int main(void)
 {
 
-	INPUT_TEST;
+	// INPUT_TEST;
 	int T;
 	cin>>T;//数据的组数
 	while(T--){

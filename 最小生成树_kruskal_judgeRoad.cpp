@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-29 20:40:24
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-31 13:43:27
+* @Last Modified time: 2017-05-23 17:49:57
 */
 
 //https://vjudge.net/contest/156294?#problem
@@ -36,6 +36,7 @@ Kruskal算法的基本思想
 #include <cmath>
 #include <map>
 #include <set>
+#define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
 const int N = 100;
@@ -92,6 +93,7 @@ void read(int n, int &k)
 	}
 }
 
+//测试函数
 void print(int n)	
 {
 	for(int i=0;i<n;i++){
@@ -106,6 +108,7 @@ void print(int n)
 
 int main(void)
 {
+	// INPUT_TEST;
 	int n;
 	while(cin>>n, n){
 		int k=0;
@@ -115,9 +118,9 @@ int main(void)
 		int ans = 0;
 		for(int i=0;i<k;i++){
 			int x = find(Imap[i].begin);
-			print(n);
+			// print(n);
 			int y = find(Imap[i].end);
-			print(n);
+			// print(n);
 			if(x != y){//如果两个点的根不相同
 				ans += Imap[i].value;
 				parents[y] = x;//这里将谁作为根都是无所谓的，因为不用考虑退化的情况。

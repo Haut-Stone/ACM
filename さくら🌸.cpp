@@ -7,12 +7,8 @@
  * @Author: Haut-Stone
  * @Date:   2017-01-22 11:12:17
  * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-05-21 22:01:48
+ * @Last Modified time: 2017-05-24 13:52:26
  */
-
-//LightOJ 1030
-//求期望值，具体的题解见印象笔记。
-//该题的数学期望 = 每一点的概率 * 到该点的值
 
 #include <algorithm>
 #include <iostream>
@@ -27,11 +23,48 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-const int N = 10100;
+const int N = 300;
+const int INF = (1<<20);
 
+
+int u, v, w;
+
+int edgeNumber;
+
+
+
+
+void init()
+{
+	edgeNumber = vertexNumber * (vertexNumber - 1) / 2;
+	for(int i=0;i<N;i++){
+		for(int j=0;j<N;j++){
+			if(i == j){
+				Imap[i][j] = 0;
+			}else{
+				Imap[i][j] = INF;
+			}
+		}
+	}
+}
+
+void read()
+{
+	for(int i=0;i<edgeNumber;i++){
+		scanf("%d%d%d", &u, &v, &w);
+		Imap[u-1][v-1] = Imap[v-1][u-1] = w;
+	}
+}
 
 int main(void)
 {
-	
+	// INPUT_TEST;
+
+	while(cin>>vertexNumber){
+		if(vertexNumber == 0) break;
+		init();
+		read();
+		printf("%d\n", prim());
+	}
 	return 0;
 }

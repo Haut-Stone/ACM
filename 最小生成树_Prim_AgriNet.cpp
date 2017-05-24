@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-30 19:02:02
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-31 19:21:05
+* @Last Modified time: 2017-05-23 17:45:43
 */
 #include <algorithm>
 #include <iostream>
@@ -32,48 +32,48 @@ int ans;
 //读取地图
 void read()
 {
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cin>>Imap[i][j];
-        }
-    }
+	for(int i=0;i<n;i++){
+		for(int j=0;j<n;j++){
+			cin>>Imap[i][j];
+		}
+	}
 }
 
 void Prim()
 {
-    for(int i=0;i<n;i++){//从第一个点搜起。
-        minCost[i] = Imap[0][i];
-        vis[i] = 0;
-    }
-    ans = 0;
-    vis[0] = 1;//第一个点已经被检查过。
-    while(true){
-        int minDis = INF;
-        int minPos = 0;
-        for(int j=0;j<n;j++){
-            if(minCost[j] < minDis && !vis[j]){//搜索到当前点的最短距离
-                minDis = minCost[j];
-                minPos = j;
-            }
-        }
-        if(minDis == INF) break;//如果所有的点都被找过
-        vis[minPos] = 1;
-        ans += minDis;
-        for(int j=0;j<n;j++){
-            if(!vis[j] && minCost[j] > Imap[minPos][j]){//将已搜索过的点视为一个整体。
-                minCost[j] = Imap[minPos][j];
-            }
-        }
-    }
+	for(int i=0;i<n;i++){//从第一个点搜起。
+		minCost[i] = Imap[0][i];
+		vis[i] = 0;
+	}
+	ans = 0;
+	vis[0] = 1;//第一个点已经被检查过。
+	while(true){
+		int minDis = INF;
+		int minPos = 0;
+		for(int j=0;j<n;j++){
+			if(minCost[j] < minDis && !vis[j]){//搜索到当前点的最短距离
+				minDis = minCost[j];
+				minPos = j;
+			}
+		}
+		if(minDis == INF) break;//如果所有的点都被找过
+		vis[minPos] = 1;
+		ans += minDis;
+		for(int j=0;j<n;j++){
+			if(!vis[j] && minCost[j] > Imap[minPos][j]){//将已搜索过的点视为一个整体。
+				minCost[j] = Imap[minPos][j];
+			}
+		}
+	}
 
 }
 
 int main(void)
 {   
-    while(cin>>n){
-        read();
-        Prim();
-        cout<<ans<<endl;
-    }
-    return 0;
+	while(cin>>n){
+		read();
+		Prim();
+		cout<<ans<<endl;
+	}
+	return 0;
 }
