@@ -5,10 +5,14 @@
 * Copyright 2017 SJH. All rights reserved.
 *
 * @Author: Haut-Stone
-* @Date:   2017-04-15 13:28:14
+* @Date:   2017-05-31 13:33:07
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-04-15 14:34:29
+* @Last Modified time: 2017-05-31 13:37:59
 */
+
+//这道题的题面意思看起来好复杂。。
+//
+
 #include <algorithm>
 #include <iostream>
 #include <cstring>
@@ -23,31 +27,8 @@ using namespace std;
 
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 
-long long L, R;
-int ans;
-int temp;
-
-void dfs(int L, int R,int index)
-{
-	if(L == R){
-		return;
-	}
-
-	if(temp <= L && temp >= R) ans++;
-
-	for(int i=0;i<=9;i++){
-		
-	}
-}
-
 int main(void)
 {
-	INPUT_TEST;
-	int T;
-	cin>>T;
-	while(T--){
-		scanf("%lld%lld", &L, &R);
-		dfs(L, R, 0);
-	}
+
     return 0;
 }

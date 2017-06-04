@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-05-28 11:01:22
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-05-28 12:25:28
+* @Last Modified time: 2017-05-31 22:08:07
 */
 
 //POJ 3660 奶牛排名
@@ -73,7 +73,7 @@ void read()
 
 int main(void)
 {
-	INPUT_TEST;
+	// INPUT_TEST;
 
 	while(cin>>vertexs>>edges){
 		init();
