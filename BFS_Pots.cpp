@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-05 12:27:02
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-06-08 12:31:44
+* @Last Modified time: 2017-06-09 17:31:59
 */
 
 //http://vj.sdutacm.org/contest/view.action?cid=62898#problem/F
@@ -28,7 +28,7 @@ int a, b, aimWater;
 int vis[N][N];
 int step[N*N];
 int myLeft, myRight;
-string op[7]={"","FILL(1)","FILL(2)","DROP(1)","DROP(2)","POUR(2,1)","POUR(1,2)"};//所有可能的输出选项。
+string op[7]={" ","FILL(1)","FILL(2)","DROP(1)","DROP(2)","POUR(2,1)","POUR(1,2)"};//所有可能的输出选项。
 
 struct Node
 {
@@ -73,7 +73,7 @@ void bfs()
 	myRight = 1;//用的数组模拟队列。。。。好吧。。
 	while(myLeft != myRight)
 	{
-		if(info[myLeft].a == aimWater || info[myLeft].b == aimWater){
+		if(info[myLeft].b == aimWater || info[myLeft].a == aimWater){
 			print();
 			return;
 		}
@@ -93,7 +93,7 @@ void bfs()
 
 		tx = info[myLeft].a;
 		ty = 0;//倒空2
-		solve(tx, ty,  4);
+		solve(tx, ty, 4);
 
 		tx = info[myLeft].a + min(a-info[myLeft].a, info[myLeft].b);
 		ty = info[myLeft].b - min(a-info[myLeft].a, info[myLeft].b);
@@ -101,6 +101,7 @@ void bfs()
 
 		tx = info[myLeft].a - min(b-info[myLeft].b, info[myLeft].a);
 		ty = info[myLeft].b + min(b-info[myLeft].b, info[myLeft].a);
+		solve(tx, ty, 6);
 		myLeft++;//a->b
 	}
 	if(myLeft >= myRight){
@@ -112,6 +113,7 @@ int main(void)
 {
 	while(~scanf("%d%d%d", &a, &b, &aimWater)){
 		memset(vis, 0, sizeof(vis));
+		memset(step, 0, sizeof(step));
 		bfs();
 	}
 	return 0;
