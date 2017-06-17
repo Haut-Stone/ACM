@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-30 19:02:02
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-05-23 17:45:43
+* @Last Modified time: 2017-06-13 12:53:36
 */
 #include <algorithm>
 #include <iostream>
@@ -65,7 +65,6 @@ void Prim()
 			}
 		}
 	}
-
 }
 
 int main(void)

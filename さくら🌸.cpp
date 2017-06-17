@@ -7,7 +7,7 @@
  * @Author: Haut-Stone
  * @Date:   2017-01-22 11:12:17
  * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-06-08 23:20:42
+ * @Last Modified time: 2017-06-12 15:39:24
  */
 
 //CF
@@ -37,18 +37,14 @@ int zeroPos;
 int main(void)
 {
 	// INPUT_TEST;
-	
 	while(cin>>n>>zeroCnt){
-
 		memset(a, 0, sizeof(a));
-
 		for(int i=0;i<n;i++){
 			scanf("%d", &a[i]);
 			if(a[i] == 0){
 				zeroPos = i;
 			}
 		}
-
 		if(zeroCnt == 1){
 			scanf("%d", &a[zeroPos]);
 			int isIncrease = true;
