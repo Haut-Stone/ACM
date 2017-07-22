@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-12 16:16:27
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-07-12 17:08:01
+* @Last Modified time: 2017-07-13 23:17:59
 */
 
 //HDU 1754
@@ -58,7 +58,7 @@ void update(int id, int x, int val)
 	int mid = (segTree[id].l + segTree[id].r) >> 1;
 	if(x <= mid){
 		update(lid, x, val);
-	}else{
+	}else{ 
 		update(rid, x, val);
 	}
 	push_up(id);
