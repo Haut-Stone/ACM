@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-01-29 17:10:06
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-21 18:57:59
+* @Last Modified time: 2017-07-24 11:47:09
 */
 #include <iostream>
 #include <cstdio>
@@ -25,8 +25,9 @@ int cluUsed[100];
 int ans;
 int n;
 int k;
+
 //读错题意了，只有#的地方可以放棋子。
-//
+
 void dfs(int row, int k)//逐行搜索。。
 {
 	if(k==0){//符合条件的填满所有棋子
@@ -48,7 +49,6 @@ void dfs(int row, int k)//逐行搜索。。
 
 int main(void)
 {
-
 	while(scanf("%d%d", &n, &k), n!=-1 && k!=-1){
 		getchar();
 		ans = 0;

@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-04-02 20:30:06
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-04-02 22:02:00
+* @Last Modified time: 2017-07-24 15:45:19
 */
 
 
@@ -47,7 +47,6 @@ int process(int car1, int car2)
 	}
 	return ans;
 }
-
 
 int prim()
 {

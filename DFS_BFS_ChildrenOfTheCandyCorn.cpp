@@ -1,14 +1,18 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-24 17:47:53
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-07-24 17:51:06
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-07-24 17:52:11
+*/
+
+//这题是沿墙走和最短路。沿墙走的部分比较困难。
+//233333我居然把这道题写出来了。。
+
 
 #include <algorithm>
 #include <iostream>

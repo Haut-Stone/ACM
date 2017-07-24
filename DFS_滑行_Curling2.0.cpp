@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-04-30 16:41:44
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-04-30 17:13:44
+* @Last Modified time: 2017-07-24 11:41:14
 */
 
 //http://poj.org/problem?id=3009
@@ -97,7 +97,7 @@ void dfs(int x, int y, int cnt)
 
 int main(void)
 {
-	INPUT_TEST;
+	// INPUT_TEST;
 
 	while(~scanf("%d %d", &col, &row) && (col || row)){
 		init();

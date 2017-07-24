@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-05 12:27:02
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-06-09 17:31:59
+* @Last Modified time: 2017-07-24 13:38:28
 */
 
 //http://vj.sdutacm.org/contest/view.action?cid=62898#problem/F
@@ -60,7 +60,6 @@ void solve(int a, int b, int operation)
 	info[myRight].operation = operation;
 	info[myRight].previous = myLeft;
 	myRight++;
-	return;
 }
 
 void bfs()
