@@ -1,14 +1,18 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-26 12:39:48
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-07-26 13:35:34
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-07-26 13:50:37
+*/
+
+//POJ 1837
+//背包的问题，寻找状态转移。其实就是把所有的状态转移的镜像全都拍了下来
+//这题就是用dp拍下了所有的状态快照
 
 #include <algorithm>
 #include <iostream>
@@ -20,6 +24,7 @@
 #include <cmath>
 #include <map>
 #include <set>
+#define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
 int dp[21][15001];
@@ -46,7 +51,8 @@ int main(void)
 			for(int balanceDegree=0;balanceDegree<15000;balanceDegree++){
 				if(dp[weightNum-1][balanceDegree]){
 					for(int hook=1;hook<=hooksNumber;hook++){
-						dp[weightNum][balanceDegree + weight[weightNum]*hookPos[hook]] += dp[weightNum-1][balanceDegree];
+						int newBalanceDegree = balanceDegree + weight[weightNum]*hookPos[hook];
+						dp[weightNum][newBalanceDegree] += dp[weightNum-1][balanceDegree];
 					}
 				}
 			}
