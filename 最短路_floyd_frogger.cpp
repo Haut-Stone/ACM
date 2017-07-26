@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-24 14:21:16
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-07-24 15:09:48
+* @Last Modified time: 2017-07-24 19:33:56
 */
 
 //POJ 2253
@@ -71,7 +71,7 @@ int main(void)
 		}
 		floyd();
 		printf("Scenario #%d\n", cas++);
-		printf("Frog Distance = %.3f\n", iMap[0][1]);
+		printf("Frog Distance = %.3f\n\n", iMap[0][1]);
 	}
 	return 0;
 }
