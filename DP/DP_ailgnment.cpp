@@ -1,14 +1,17 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-26 20:23:05
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-07-26 20:29:06
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-07-26 20:29:43
+*/
+
+//
+//
 
 #include <algorithm>
 #include <iostream>
@@ -20,6 +23,7 @@
 #include <cmath>
 #include <map>
 #include <set>
+#define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
 const int N = 1100;
@@ -37,6 +41,7 @@ int main(void)
 		}
 		fromLeft[0] = fromRight[n-1] = 1;
 
+		//分别向左和向右进行LIS
 		for(int i=1;i<n;i++){
 			fromLeft[i] = 1;
 			for(int j=0;j<i;j++){

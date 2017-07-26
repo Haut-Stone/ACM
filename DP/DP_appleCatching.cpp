@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-05-03 13:13:01
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-05-03 13:36:28
+* @Last Modified time: 2017-07-26 18:55:11
 */
 
 //http://poj.org/problem?id=2385
@@ -70,3 +70,32 @@ int main(void)
 	}
 	return 0;
 }
+
+//另外一种解法
+/*
+int tree[2][31];//表示在第i棵树的剩余多少次转移机会时的能吃到苹果的最大个数
+
+int main(void)
+{
+	int T;
+	int W;
+	int whichTree;
+	int ans = 0;
+
+	while(~scanf("%d%d", &T, &W)){
+		for(int i=0;i<T;i++){
+			scanf("%d", &whichTree);
+			tree[whichTree - 1][W]++;
+			for(int j=W-1;j>=0 && i+1>W-j;j--){
+				tree[whichTree - 1][j] = max(tree[!(whichTree - 1)][j + 1] + 1, tree[whichTree - 1][j] + 1);
+			}			
+		}
+		//寻找一个值最大的状态
+		for(int i=0;i<2;i++)
+			for(int j=0;j<=W;j++)
+				ans = max(tree[i][j], ans);
+		printf("%d", ans);
+	}
+	return 0;
+}
+ */
