@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-26 13:35:34
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-07-26 13:50:37
+* @Last Modified time: 2017-07-27 22:17:14
 */
 
 //POJ 1837
@@ -46,7 +46,6 @@ int main(void)
 
 		memset(dp, 0, sizeof(dp));
 		dp[0][7500] = 1;
-
 		for(int weightNum=1;weightNum<=weightsNumber;weightNum++){
 			for(int balanceDegree=0;balanceDegree<15000;balanceDegree++){
 				if(dp[weightNum-1][balanceDegree]){
