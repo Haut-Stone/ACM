@@ -7,10 +7,10 @@
 * @Author: Haut-Stone
 * @Date:   2017-05-03 22:38:39
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-05-04 13:20:59
+* @Last Modified time: 2017-07-27 11:55:18
 */
 
-//http://poj.org/problem?id=3280
+//POJ 3280
 //给出一个由m中字母组成的长度为n的串，给出m种字母添加和删除花费的代价，求让给出的串变成回文串的代价。
 
 #include <algorithm>
@@ -49,7 +49,6 @@ int main(void)
 			cin>>soloChar>>addFee>>delFee;
 			add[(int)soloChar] = min(addFee, delFee);//简化了之后求最小值的过程
 		}
-
 		memset(dp, 0, sizeof(dp));
 		for(int k=1;k<str.size();k++){//不同长度的串
 			for(int i=0,j=k;j<str.size();i++,j++){

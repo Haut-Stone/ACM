@@ -7,7 +7,7 @@
  * @Author: Haut-Stone
  * @Date:   2017-01-22 11:12:17
  * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-26 20:23:05
+ * @Last Modified time: 2017-07-27 12:55:24
  */
 
 #include <algorithm>
@@ -22,48 +22,56 @@
 #include <set>
 using namespace std;
 
-const int N = 1100;
-
-double high[N];
-int fromLeft[N];
-int fromRight[N];
-int n;
+const int N = 1000010;
+char str1[N];
+char str2[N];
+int sameNum;
+int difNum;
+int ans1;
+int ans2;
+int flag;
 
 int main(void)
 {
-	while(~scanf("%d", &n)){
+	int n;
+	int rightA;
+	int rightB;
+	int T;
+	scanf("%d", &T);
+	while(T--){
+		scanf("%d%d%d", &n, &rightA, &rightB);
+		flag = 0;
+		scanf("%s%s", str1, str2);
 		for(int i=0;i<n;i++){
-			scanf("%lf", &high[i]);
+			if(str1[i] == str2[i]){
+				sameNum++;
+			}else{
+				difNum++;
+			}
 		}
-		fromLeft[0] = fromRight[n-1] = 1;
+		//ab君错i道	
+		for(int i=0;i<=difNum;i++){
+			int wNumBase1 = sameNum + i;
+			int wNumBase2 = i;
+			for(int j=1;j<=difNum-i;j++){
+				ans1 = wNumBase1 + j;
+				ans2 = wNumBase1 + (difNum - i) - j;
 
-		for(int i=1;i<n;i++){
-			fromLeft[i] = 1;
-			for(int j=0;j<i;j++){
-				if(high[j] < high[i]){
-					fromLeft[i] = max(fromLeft[i], fromLeft[j]+1);
+				int ans11 = wNumBase2 + j;
+				int ans22 = wNumBase2 + (difNum - i) - j;
+
+				if((ans1 == (n - rightA) && ans2 == (n - rightB)) || (ans11 == (n - rightA) && (n-rightB) == ans22)){
+					flag = 1;
+					break;
 				}
 			}
+			if(flag) break;
 		}
-
-		for(int i=n-2;i>=0;i--){
-			fromRight[i] = 1;
-			for(int j=n-1;j>i;j--){
-				if(high[j] < high[i]){
-					fromRight[i] = max(fromRight[i], fromRight[j]+1);
-				}
-			}
+		if(flag){
+			printf("Not lying\n");
+		}else{
+			printf("Lying\n");
 		}
-
-		int ans = 0;
-		for(int i=0;i<n-1;i++){
-			for(int j=i+1;j<n;j++){
-				//枚举两个顶峰的位置
-				ans = max(ans, (fromLeft[i] + fromRight[j]));
-			}
-		}
-
-		printf("%d\n", n-ans);
 	}
 	return 0;
 }

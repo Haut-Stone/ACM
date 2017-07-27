@@ -7,10 +7,10 @@
 * @Author: Haut-Stone
 * @Date:   2017-05-03 21:53:33
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-05-03 22:13:06
+* @Last Modified time: 2017-07-27 10:51:11
 */
 
-//http://poj.org/problem?id=3616
+//POJ 3616
 //时间为判断条件，且必然由小到大。以开始时间为条件对时间段进行排序，求最大递增子序列。
 
 #include <algorithm>
@@ -25,49 +25,52 @@
 #include <set>
 using namespace std;
 
-#define INPUT_TEST freopen("in.txt", "r", stdin)
+const int N = 10050;
 
-const int N = 1111;
-
-int dp[N];
+int dp[N];//以第i段为开始段获得的最大值
+int maxTime;
+int maxChance;
+int restTime;
 
 struct Node
 {
-	int l;
-	int r;
-	int v;
-}a[N];
+	int b;
+	int e;
+	int value;
+}timeSeg[N];
 
-
-bool cmp(const Node &a, const Node &b)
+bool cmp(Node a, Node b)
 {
-	return a.l < b.l;
+	if(a.b == b.b){
+		//时间早的在前
+		return a.e < b.e;
+	}else{
+		return a.b < b.b;
+	}
 }
 
 int main(void)
 {
-	// INPUT_TEST;
-
-	int n;
-	int m;
-	int r;
-	scanf("%d%d%d", &n, &m, &r);
-	for(int i=0;i<m;i++){
-		scanf("%d%d%d", &a[i].l, &a[i].r, &a[i].v);
-	}
-	sort(a, a+m, cmp);
-
-	int ans = 0;
-	for(int i=0;i<m;i++){
-		int iMax = 0;
-		for(int j=0;j<i;j++){
-			if(a[j].r+r <= a[i].l && iMax < dp[j]){
-				iMax = dp[j];
+	while(~scanf("%d %d %d", &maxTime, &maxChance, &restTime)){
+		for(int i=0;i<maxChance;i++){
+			scanf("%d%d%d", &timeSeg[i].b, &timeSeg[i].e, &timeSeg[i].value);
+			timeSeg[i].e += restTime;
+		}
+		sort(timeSeg, timeSeg+maxChance, cmp);
+		// printf("dbg\n");
+		for(int i=maxChance-1;i>=0;i--){
+			dp[i] = timeSeg[i].value;
+			for(int j=i+1;j<maxChance;j++){
+				if(timeSeg[j].b >= timeSeg[i].e){
+					dp[i] = max(dp[i], dp[j] + timeSeg[i].value);
+				}
 			}
 		}
-		dp[i] = iMax + a[i].v;
-		ans = max(ans, dp[i]);
+		int ans = 0;
+		for(int i=0;i<maxChance;i++){
+			ans = max(ans, dp[i]);
+		}
+		printf("%d\n", ans);
 	}
-	cout<<ans<<endl;
 	return 0;
 }
