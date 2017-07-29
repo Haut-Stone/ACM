@@ -1,14 +1,14 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-29 09:39:02
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+*
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-01-22 11:12:17
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-07-29 15:51:43
+*/
 
 #include <algorithm>
 #include <iostream>
@@ -20,69 +20,71 @@
 #include <cmath>
 #include <map>
 #include <set>
+#define lid (id<<1)
+#define rid (id<<1|1)
 using namespace std;
 
-// const int N = 110;
+const int N = 20;
+const int INF = 99999999;
 
-// map<int, int> mapping;
-// int n, k;
-// int solo;
+struct Info
+{
+	char name[30];
+	int value;
+}children[N];
 
-// int main(void)
-// {
-// 	while(~scanf("%d%d", &n, &k)){
-// 		mapping.clear();
-// 		for(int i=0;i<n;i++){
-// 			scanf("%d", &solo);
-// 			mapping[solo] = mapping[solo] + 1;
-// 		}
-// 		for(map<int, int>::iterator it=mapping.begin();it!=mapping.end();it++){
-// 			if(it->second % n == 0){
-// 				printf("%d\n", it->first);
-// 			}
-// 		}
-// 	}
-// 	return 0;
-// }
+struct Node
+{
+	int l, r;
+	int alive;
+}segTree[N*4];
 
-const int N = 1000010;
-map<int, int> mapping;
-int n, k;
-int solo;
-int a[N];
+int n;
+int startIndex;
+int childrenPassed;
+int pos;
+
+void build(int id, int l, int r)
+{
+	segTree[id].l = l;
+	segTree[id].r = r;
+	segTree[id].alive = (r - l + 1);
+	if(segTree[id].l == segTree[id].r){
+		return;
+	}
+	int mid = (segTree[id].l + segTree[id].r) >> 1;
+	build(lid, l, mid);
+	build(rid, mid+1, r);
+}
+
+void update(int id, int target)
+{
+	if(segTree[id].l == segTree[id].r){
+		segTree[id].alive--;
+		childrenPassed++;
+		return;
+	}
+	int mid = (segTree[id].l + segTree[id].r) >> 1;
+	if(target <= mid){
+		update(lid, target);
+	}else{
+		update(rid, target);
+	}
+	segTree[id].alive = segTree[lid].alive + segTree[rid].alive;
+}
 
 int main(void)
 {
-	while(~scanf("%d%d", &n, &k)){
-		if(k == 0 || n == 0){
-			continue;
+	while(~scanf("%d%d", &n, &startIndex)){
+		for(int i=1;i<=n;i++){
+			scanf("%s%d", children[i].name, &children[i].value);
 		}
-//		mapping.clear();
-		for(int i=0;i<n;i++){
-			scanf("%d", &a[i]);
-			a[i]++;
-//			mapping[solo] = mapping[solo] + 1;
+		build(1, 1, n);
+		childrenPassed = 0;
+		pos = startIndex;
+		for(int i=1;i<=pos;i++){
+			update(1, pos);
 		}
-		sort(a, a+n);
-		int cnt = 0;
-		for(int i=0;i<n;i++){
-			if(a[i] == a[i+1]){
-				cnt++;
-			}else{
-				cnt++;
-				if(cnt % k != 0){
-					printf("%d", a[i]-1);
-					break;
-				}else{
-					cnt = 0;
-				}
-			}
-		}
-//		for(map<int, int>::iterator it=mapping.begin();it!=mapping.end();it++){
-//			if(it->second % k != 0){
-//				printf("%d\n", it->first);
-//			}
-//		}
 	}
 	return 0;
 }

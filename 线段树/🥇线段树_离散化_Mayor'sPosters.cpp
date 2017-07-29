@@ -7,12 +7,13 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-12 19:50:59
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-07-29 10:59:34
+* @Last Modified time: 2017-07-29 11:13:02
 */
 
 //POJ 2528
 //通过这道题，第一次接触离散化，还是蛮有意义的一道题
 //题意：不断的往区间上面贴海报，问到最后能看见的海报有几张？
+//这道题一定会印象深刻的
 
 #include <algorithm>
 #include <iostream>
