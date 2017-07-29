@@ -7,11 +7,12 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-26 14:26:44
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-07-26 15:46:07
+* @Last Modified time: 2017-07-27 23:36:28
 */
 
 //POJ 1276 
 //（这不是多重背包！！！）这东西是多重背包？只是记录了一下这个和有没有出现过而已吧
+//不过只是我不理解多重背包而已
 
 #include <algorithm>
 #include <iostream>

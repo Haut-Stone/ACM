@@ -7,11 +7,12 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-12 18:09:05
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-07-12 19:14:09
+* @Last Modified time: 2017-07-28 10:36:18
 */
 
 //POJ 3468
 //比起模版题稍微有些难度。逐个更新到叶子结点的话，是一定会超时的。
+//区间更新的模版
 //可以给一个区间同时加一个数，或者查询一个区间中所有数的和
 
 #include <algorithm>
@@ -36,8 +37,8 @@ struct Node
 {
 	int l;
 	int r;
-	long long nSum;
-	long long Inc;
+	long long sum;
+	long long lazy;
 }segTree[4*MAXN];
 
 int num[MAXN];
@@ -47,16 +48,16 @@ char option;
 
 void push_up(int id)
 {
-	segTree[id].nSum = segTree[lid].nSum + segTree[rid].nSum;
+	segTree[id].sum = segTree[lid].sum + segTree[rid].sum;
 }
 
 void build(int id, int l, int r)
 {
 	segTree[id].l = l;
 	segTree[id].r = r;
-	segTree[id].Inc = 0;
+	segTree[id].lazy = 0;
 	if(l == r){
-		segTree[id].nSum = num[l];
+		segTree[id].sum = num[l];
 		return;
 	}
 	int mid = (segTree[id].l + segTree[id].r) >> 1;
@@ -68,10 +69,10 @@ void build(int id, int l, int r)
 void update(int id, int l, int r, long long val)
 {
 	if(segTree[id].r == r && segTree[id].l == l){
-		segTree[id].Inc += val;
+		segTree[id].lazy += val;
 		return;
 	}
-	segTree[id].nSum += val*(r-l+1);
+	segTree[id].sum += val*(r-l+1);//把和全部加到最先匹配的区间上
 	int mid = (segTree[id].r + segTree[id].l) >> 1;
 	if(r <= mid){
 		update(lid, l, r, val);
@@ -87,13 +88,13 @@ void update(int id, int l, int r, long long val)
 long long query(int id, int l, int r)
 {
 	if(segTree[id].l == l && segTree[id].r == r){
-		return segTree[id].nSum + (r-l+1) * segTree[id].Inc;
+		return segTree[id].sum + (r-l+1) * segTree[id].lazy;
 	}
-	segTree[id].nSum += (segTree[id].r - segTree[id].l + 1)*segTree[id].Inc;
+	segTree[id].sum += (segTree[id].r - segTree[id].l + 1)*segTree[id].lazy;
 	int mid = (segTree[id].r + segTree[id].l) >> 1;
-	update(lid, segTree[id].l, mid, segTree[id].Inc);
-	update(rid, mid+1, segTree[id].r, segTree[id].Inc);
-	segTree[id].Inc = 0;
+	update(lid, segTree[id].l, mid, segTree[id].lazy);
+	update(rid, mid+1, segTree[id].r, segTree[id].lazy);
+	segTree[id].lazy = 0;
 	if(r <= mid){
 		return query(lid, l, r);
 	}

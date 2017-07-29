@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-12 11:44:31
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-07-12 16:00:24
+* @Last Modified time: 2017-07-28 09:36:22
 */
 
 //HDU 1166
@@ -69,6 +69,7 @@ void update(int id, int x, int val)
 		return;
 	}
 	int mid = (segTree[id].l + segTree[id].r) >> 1;
+	//这里必须这样写因为建树的时候mid在左区间里面
 	if(x <= mid){
 		update(lid, x, val);
 	}else{

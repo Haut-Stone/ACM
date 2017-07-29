@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-03-15 22:04:31
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-03-15 22:05:28
+* @Last Modified time: 2017-07-28 19:31:17
 */
 
 //http://vj.sdutacm.org/contest/view.action?cid=62932#problem/E
@@ -32,7 +32,6 @@ int searchMap(int x, int y)
 	if(Imap[x+1][y-1] == 'x' && Imap[x-1][y+1] == 'x') return 1;
 	if(Imap[x+1][y] == 'x' && Imap[x-1][y] == 'x') return 1;
 	if(Imap[x][y+1] == 'x' && Imap[x][y-1] == 'x') return 1;
-
 	if(Imap[x-1][y-1] == 'x' && Imap[x-2][y-2] == 'x') return 1;
 	if(Imap[x-1][y] == 'x' && Imap[x-2][y] == 'x') return 1;
 	if(Imap[x-1][y+1] == 'x' && Imap[x-2][y+2] == 'x') return 1;
@@ -41,7 +40,6 @@ int searchMap(int x, int y)
 	if(Imap[x+1][y] == 'x' && Imap[x+2][y] == 'x') return 1;
 	if(Imap[x+1][y-1] == 'x' && Imap[x+2][y-2] == 'x') return 1;
 	if(Imap[x][y-1] == 'x' && Imap[x][y-2] == 'x') return 1;
-
 	return 0;
 }
 
@@ -68,5 +66,4 @@ int main(void)
 		printf("NO\n");
 	}
 	return 0;
-
 }
