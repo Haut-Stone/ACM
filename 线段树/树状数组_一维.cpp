@@ -1,14 +1,17 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-29 20:35:19
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-07-29 20:38:29
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-07-29 20:39:01
+*/
+
+//单步运行观察值，更好的理解。
+//
 
 #include <algorithm>
 #include <iostream>
@@ -20,8 +23,7 @@
 #include <cmath>
 #include <map>
 #include <set>
-#define lid (id<<1)
-#define rid (id<<1|1)
+#define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
 int n = 8;

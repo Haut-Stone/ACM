@@ -6,8 +6,8 @@
 *
 * @Author: li
 * @Date:   2017-07-27 19:24:51
-* @Last Modified by:   li
-* @Last Modified time: 2017-07-27 19:26:12
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-07-29 16:27:44
 */
 
 //显示程序运行时间的小工具
@@ -35,6 +35,6 @@ int main(void)
 	中间是主流程
 
 	 */
-    cout << (clock() - start) / (double)CLOCKS_PER_SEC;
+    cout <<"totally: "<< (clock() - start) / (double)CLOCKS_PER_SEC<<" seconds";
 	return 0;
 }
