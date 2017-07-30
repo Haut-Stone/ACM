@@ -1,6 +1,6 @@
 <p align="center">
   <a href="http://shallweitalk.com">
-    <img src="https://avatars2.githubusercontent.com/u/23383152?v=4&u=8dd370744777e5b396df4f20926a79be23ecb829&s=400" width=220 height=220>
+    <img src="https://raw.githubusercontent.com/Haut-Stone/ACM/master/photos/me.png" width=220 height=220>
   </a>
   <h3 align="center">Stone</h3>
   <p align="center">
