@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-28 11:10:13
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-07-29 13:21:40
+* @Last Modified time: 2017-07-30 14:52:40
 */
 
 #include <algorithm>
@@ -20,7 +20,6 @@
 #include <cmath>
 #include <map>
 #include <set>
-#define rid (id<<1|1)
-#define lid (id<<1)
 using namespace std;
+#define N 100
 
