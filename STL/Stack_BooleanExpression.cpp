@@ -1,14 +1,14 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-30 16:43:43
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-07-30 16:17:47
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-07-30 16:36:13
+*/
 
 #include <algorithm>
 #include <iostream>
@@ -36,6 +36,20 @@ void check(int a)
 	val.push(a);
 }
 
+void calculate()
+{
+	int a = val.top();
+	val.pop();
+	int b = val.top();
+	val.pop();
+	if(op.top() == '|'){
+		val.push(a|b);
+	}else{
+		val.push(a&b);
+	}
+	op.pop();
+}
+
 int main(void)
 {
 	mapping['!'] = 3;
@@ -43,7 +57,7 @@ int main(void)
 	mapping['|'] = 1;
 
 	int soloChar;
-	int a, b;
+	int a;
 	int cas = 0;
 
 	while((soloChar = getchar()) && soloChar != EOF){
@@ -69,16 +83,7 @@ int main(void)
 				op.push(soloChar);
 			}else if(soloChar == ')'){
 				while(!op.empty() && op.top() != '('){
-					a = val.top();
-					val.pop();
-					b = val.top();
-					val.pop();
-					if(op.top() == '|'){
-						val.push(a|b);
-					}else{
-						val.push(a&b);
-					}
-					op.pop();
+					calculate();
 				}
 				op.pop();
 				while(!op.empty() && op.top() == '!'){
@@ -89,31 +94,13 @@ int main(void)
 				}
 			}else{
 				while(!op.empty() && op.top() != '(' && op.top() != '!' && mapping[soloChar] <= mapping[op.top()]){
-					a = val.top();
-					val.pop();
-					b = val.top();
-					val.pop();
-					if(op.top() == '|'){
-						val.push(a|b);
-					}else{
-						val.push(a&b);
-					}
-					op.pop();
+					calculate();
 				}
 				op.push(soloChar);
 			}
 		}while((soloChar = getchar()) && soloChar != EOF && soloChar != '\n');
 		while(!op.empty()){
-			a = val.top();
-			val.pop();
-			b = val.top();
-			val.pop();
-			if(op.top() == '|'){
-				val.push(a|b);
-			}else{
-				val.push(a&b);
-			}
-			op.pop();
+			calculate();
 		}
 		if(val.top() == 0){
 			soloChar = 'F';
