@@ -12,6 +12,11 @@
   <span style="color: #D96045">World.</span>
     <br>
   </p>
+  <p align="center">
+    <a href="http://shallweitalk.com">
+      <img src="https://raw.githubusercontent.com/Haut-Stone/ACM/master/photos/CodeChangeWorld.png" width=300 height=55>
+    </a>
+  </p>
 </p>
 <br>
 
