@@ -1,14 +1,17 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-06-03 12:15:58
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-31 19:29:16
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-07-31 19:29:54
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-07-31 19:33:44
+*/
+
+//HDU 3746
+//这题要求对next数组深入的了解。next数组表示前后缀的最大匹配长度
 
 #include <algorithm>
 #include <iostream>

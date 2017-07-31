@@ -7,7 +7,7 @@
  * @Author: Haut-Stone
  * @Date:   2017-01-22 11:12:17
  * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-31 19:11:30
+ * @Last Modified time: 2017-07-31 20:20:58
  */
 
 #include <algorithm>
@@ -24,7 +24,7 @@ using namespace std;
 
 //H
 
-const int N = 110;
+const int N = 1000100;
 
 int iNext[N];
 
