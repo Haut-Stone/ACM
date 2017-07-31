@@ -7,7 +7,7 @@
  * @Author: Haut-Stone
  * @Date:   2017-06-03 12:15:58
  * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-31 19:29:16
+ * @Last Modified time: 2017-07-31 20:44:26
  */
 
 #include <algorithm>
@@ -23,18 +23,21 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-const int N = 100100;
+const int N = 100;
+
 int iNext[N];
 
-void getNext(char pattern[], int m)
+void getNext(char pattarn[])
 {
+	int len = strlen(pattarn);
 	int j = -1;
 	iNext[0] = -1;
-	for(int i=1;i<m;i++){
-		while(j != -1 && pattern[i] != pattern[j+1]){
+
+	for(int i=1;i<len;i++){
+		while(j != -1 && pattarn[i] != pattarn[j+1]){
 			j = iNext[j];
 		}
-		if(pattern[i] == pattern[j+1]){
+		if(pattarn[i] == pattarn[j+1]){
 			j++;
 		}
 		iNext[i] = j;
@@ -43,20 +46,20 @@ void getNext(char pattern[], int m)
 
 int main(void)
 {
-	char str[N];
-	int T;
-	scanf("%d", &T);
-	while(T--){
-		scanf("%s", str);
-		int len = (int)strlen(str);
-		getNext(str, len);
-		int ans = 0;
-		int cir = len - (iNext[len-1] + 1);
-		if(len % cir == 0 && cir != len){
+	char str1[N];
+	char str2[N];
+
+	while(~scanf("%s%s", str1, str2)){
+		strcat(str1, str2);
+		int len = strlen(str1);
+		getNext(str1);
+		if(iNext[len-1]+1 == 0){
 			printf("0\n");
 		}else{
-			ans = cir - (len - (len / cir) * cir);
-			printf("%d\n", ans);
+			for(int i=0;i<iNext[len-1]+1;i++){
+				printf("%c", str1[i]);
+			}
+			printf(" %d\n", iNext[len-1]+1);
 		}
 	}
 	return 0;

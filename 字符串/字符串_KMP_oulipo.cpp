@@ -1,14 +1,17 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-07-31 20:25:35
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-07-31 20:25:23
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-07-31 20:25:32
+*/
+
+//
+//
 
 #include <algorithm>
 #include <iostream>
@@ -20,9 +23,8 @@
 #include <cmath>
 #include <map>
 #include <set>
+#define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
-
-//H
 
 const int N = 1000100;
 int iNext[N];
