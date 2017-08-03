@@ -1,14 +1,17 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-08-02 14:13:47
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-08-02 14:15:02
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-08-02 16:39:28
+*/
+
+//HDu 2222
+//AC自动机裸题
 
 #include <algorithm>
 #include <iostream>
@@ -28,10 +31,12 @@ const int ALPHABET_SIZE = 26;
 
 struct Node
 {
+	// int id;
 	int isLast;
 	Node* fail;
 	Node* children[ALPHABET_SIZE];
 	Node(){
+		// id = 0;
 		isLast = 0;
 		fail = NULL;
 		for(int i=0;i<ALPHABET_SIZE;i++){
@@ -41,12 +46,13 @@ struct Node
 };
 
 Node* root;
+// int idNumber = 1;
 
 void insert(char pattern[])
 {
 	Node* current;
 	Node* temp;
-	int len = strlen(pattern);
+	int len = (int)strlen(pattern);
 	current = root;
 	for(int i=0;i<len;i++){
 		int tempChar = pattern[i] - 'a';
@@ -54,6 +60,7 @@ void insert(char pattern[])
 			temp = new Node;
 			current->children[tempChar] = temp;
 			current = current->children[tempChar];
+			// current->id = idNumber++;
 		}else{
 			current = current->children[tempChar];
 		}
@@ -81,17 +88,20 @@ void initFailPointer()
 			if(son != NULL){
 				if(father == root){
 					son->fail = root;
+					// printf("%d---->root\n", son->id);
 				}else{
 					fatherFail = father->fail;
 					while(fatherFail != NULL){
 						if(fatherFail->children[i] != NULL){
 							son->fail = fatherFail->children[i];
+							// printf("%d---->%d\n", son->id, fatherFail->children[i]->id);							
 							break;
 						}
 						fatherFail = fatherFail->fail;
 					}
 					if(fatherFail == NULL){
 						son->fail = root;
+						// printf("%d---->root\n", son->id);
 					}
 				}
 				Q.push(son);
