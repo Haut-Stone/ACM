@@ -1,14 +1,17 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-08-03 20:23:44
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-08-03 20:19:50
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-08-03 20:24:36
+*/
+
+//POJ 3070
+//求第n个斐波那契数，是几,矩阵快速幂模版
 
 #include <algorithm>
 #include <iostream>
