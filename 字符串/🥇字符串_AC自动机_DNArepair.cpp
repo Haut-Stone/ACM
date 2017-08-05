@@ -5,10 +5,13 @@
 * Copyright 2017 SJH. All rights reserved.
 *
 * @Author: Haut-Stone
-* @Date:   2017-07-28 19:01:10
+* @Date:   2017-08-04 12:34:18
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-05 11:01:06
+* @Last Modified time: 2017-08-04 12:34:18
 */
+
+//
+//
 
 #include <algorithm>
 #include <iostream>
@@ -23,3 +26,9 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
+
+int main(void)
+{
+
+	return 0;
+}
