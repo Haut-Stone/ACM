@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-08-03 20:19:50
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-03 20:24:36
+* @Last Modified time: 2017-08-05 15:58:12
 */
 
 //POJ 3070
@@ -26,7 +26,7 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-const int MOD = 10000;
+const int MOD = 1e9+9;
 struct Matrix
 {
 	long long ma[2][2];
