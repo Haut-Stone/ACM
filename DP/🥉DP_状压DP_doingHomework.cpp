@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-08-07 10:55:55
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-07 11:49:28
+* @Last Modified time: 2017-08-08 09:16:50
 */
 
 //第一次做状压DP,照着秦学长的博客写的
@@ -27,7 +27,7 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-const int N = 110;
+const int N = 1000010;
 const int INF = 99999999;
 
 int n, binaryN;
