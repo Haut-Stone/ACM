@@ -5,10 +5,13 @@
 * Copyright 2017 SJH. All rights reserved.
 *
 * @Author: Haut-Stone
-* @Date:   2017-07-28 19:01:10
+* @Date:   2017-08-07 17:12:34
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-07 17:23:05
+* @Last Modified time: 2017-08-07 17:14:39
 */
+
+//POJ 3254
+//状压DP真的是把二进制玩的出神入化啊
 
 #include <algorithm>
 #include <iostream>
@@ -49,26 +52,27 @@ int main(void)
 		for(int i=1;i<=row;i++){
 			for(int j=1;j<=col;j++){
 				scanf("%d", &temp);
-				if(temp == 0) iMap[i] += (1<<(j-1));
+				if(temp == 0){
+					iMap[i] += (1<<(j-1));//注意这里的图是反着的，并且01反转了
+				}
 			}
 		}
-
 		int all = 0;
-		for(int i=0;i<(1<<col);i++){
+		for(int i=0;i<(1<<col);i++){//生成不相邻情况
 			if(!haveAdjacentOne(i)){
 				status[all++] = i;
 			}
 		}
-
+		
 		for(int i=0;i<all;i++){
-			if(!haveInvisablePos(1, i)){
+			if(!haveInvisablePos(1, i)){//选择出可以放置的不相邻情况,放置到第一行
 				dp[1][i] = 1;
 			}
 		}
-
+		
 		for(int i=2;i<=row;i++){
 			for(int j=0;j<all;j++){
-				if(!haveInvisablePos(i, j)){
+				if(!haveInvisablePos(i, j)){//该情况可以放置到当前行
 					for(int k=0;k<all;k++){
 						if(!haveInvisablePos(i-1, k)){
 							if(!(status[j]&status[k])){
@@ -79,7 +83,7 @@ int main(void)
 				}
 			}
 		}
-
+		
 		int ans = 0;
 		for(int i=0;i<all;i++){
 			ans += dp[row][i];
