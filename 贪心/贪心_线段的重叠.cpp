@@ -1,14 +1,17 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-06-03 12:15:58
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-08-09 17:39:48
- */
+* Created by ShiJiahuan(li) in haut.
+* for more please visit www.shallweitalk.com
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-08-09 17:49:49
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-08-09 17:51:42
+*/
+
+//https://www.51nod.com/onlineJudge/questionCode.html#!problemId=1091
+//简单的贪心问题，但是也是值得思索的。注意排序，左端点升序排， 右端点降序排。
 
 #include <algorithm>
 #include <iostream>
@@ -19,7 +22,7 @@
 #include <stack>
 #include <cmath>
 #include <map>
-#include <set> 
+#include <set>
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
