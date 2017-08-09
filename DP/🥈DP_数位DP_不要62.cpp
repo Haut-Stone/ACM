@@ -5,10 +5,13 @@
 * Copyright 2017 SJH. All rights reserved.
 *
 * @Author: Haut-Stone
-* @Date:   2017-08-04 20:46:48
+* @Date:   2017-08-09 13:47:48
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-09 13:32:19
+* @Last Modified time: 2017-08-09 14:33:56
 */
+
+//这题我理解了一上午，现在终于会做了，写一篇题解加深一下记忆。
+//
 
 #include <algorithm>
 #include <iostream>
