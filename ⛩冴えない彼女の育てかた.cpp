@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-28 19:01:10
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-10 11:53:56
+* @Last Modified time: 2017-08-11 20:41:14
 */
 
 #include <algorithm>
@@ -23,3 +23,26 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
+const int N = 110;
+
+bool bc(long long n)
+{
+	for(long long i=2;i*i<=n;i++){
+		if(n % i == 0){
+			return false;
+		}
+	}
+	return true;
+}
+
+int main(void)
+{
+	int n;
+	while(~scanf("%d", &n)){
+		if(n % 2 == 0){
+			printf("2\n");
+			continue;
+		}
+	}
+	return 0;
+}
