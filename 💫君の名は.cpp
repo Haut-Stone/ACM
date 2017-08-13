@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-06-03 12:15:58
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-11 17:58:03
+* @Last Modified time: 2017-08-12 21:05:21
 */
 
 #include <algorithm>
@@ -20,6 +20,6 @@
 #include <cmath>
 #include <map>
 #include <set>
-#define INPUT_TEST freopen("in.txt", "r", stdin)
+#define INPUT_TEST freopen("/Users/li/Desktop/in.txt", "r", stdin)
 using namespace std;
 
