@@ -1,4 +1,4 @@
-9b/*
+/*
 * Created by ShiJiahuan(li) in haut.
 * for more please visit www.shallweitalk.com
 * 
@@ -7,7 +7,7 @@
 * @Author: li
 * @Date:   2017-03-05 18:53:57
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-07-24 11:18:40
+* @Last Modified time: 2017-08-14 14:12:26
 */
 
 //http://vj.sdutacm.org/contest/view.action?cid=62898#problem/E
@@ -47,7 +47,7 @@ void dfs(int row, int col)
                 dfs(row, col+1);//向右搜索
             }else{
                 dfs(row+1, 0);//搜索下一行
-            }i
+            }
         }else{//如果之前这个位置是空的
             for(int i=1;i<=9;i++){//搜索都有哪些可用数字（从1->9遍历）
                 if(rowBook[row][i] == 0 && colBook[col][i] == 0 && latticeBook[row/3*3+col/3][i] == 0){//根据i,j标定它所属的行，列，和所在的小矩阵,如果这个数字从未出现过。
@@ -55,7 +55,7 @@ void dfs(int row, int col)
                     Imap[row][col] = i;//填入数字
                     rowBook[row][i] = 1;//改变标记状态为已出现。
                     colBook[col][i] = 1;
-                    ilatticeBook[s][i] = 1;
+                    latticeBook[s][i] = 1;
                     if(col<=7){
                         dfs(row, col+1);
                     }else{

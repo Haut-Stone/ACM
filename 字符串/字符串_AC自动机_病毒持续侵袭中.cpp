@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-08-03 09:29:43
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-03 11:51:06
+* @Last Modified time: 2017-08-14 14:17:11
 */
 
 //HDU 3065
@@ -23,13 +23,6 @@
 #include <cmath>
 #include <map>
 #include <set>
-#define INPUT_TEST freopen("in.txt", "r", stdin)
-using namespace std;
-
-#include <algorithm>
-#include <iostream>
-#include <cstdio>
-#include <queue>
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
