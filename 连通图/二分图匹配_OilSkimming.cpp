@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-08-15 17:02:54
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-15 17:04:25
+* @Last Modified time: 2017-08-16 14:32:37
 */
 
 //HDU 4185
@@ -26,7 +26,7 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-const int N = 110;
+const int N = 1100;
 const int DIC[4][2] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
 char charMap[N][N];
