@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-08-21 11:17:12
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-21 16:52:45
+* @Last Modified time: 2017-08-23 19:13:41
 */
 
 //dinic的模版题，就是建图的时候会有一点小技巧
@@ -49,12 +49,14 @@ int level[M];
 int iter[M];
 int N, F, D;
 
+//同时加入一条正边和一条反向边
 void addEdge(int from, int to, int cap)
 {
 	iMap[from].push_back(Edge(to, cap, (int)iMap[to].size()));
 	iMap[to].push_back(Edge(from, 0, (int)iMap[from].size() - 1));
 }
 
+//分层求出最短的增广路径
 void bfs(int s)
 {
 	memset(level, -1, sizeof(level));
@@ -74,6 +76,7 @@ void bfs(int s)
 	}
 }
 
+//深搜直到当前的路径上面没有剩余的可被增广的路径
 int dfs(int v, int t, int f)
 {
 	if(v == t) return f;
@@ -91,6 +94,7 @@ int dfs(int v, int t, int f)
 	return 0;
 }
 
+//先分层再深搜
 int maxFlow(int s, int t)
 {
 	int flow = 0;
