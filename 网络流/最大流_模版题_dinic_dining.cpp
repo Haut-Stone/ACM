@@ -1,14 +1,19 @@
 /*
 * Created by ShiJiahuan(li) in haut.
-* for more please visit www.shallweitalk.com
+* For more please visit www.shallweitalk.com.
 * 
 * Copyright 2017 SJH. All rights reserved.
 *
 * @Author: Haut-Stone
-* @Date:   2017-08-04 20:46:48
+* @Date:   2017-08-21 11:17:12
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-21 17:38:10
+* @Last Modified time: 2017-08-21 16:52:45
 */
+
+//dinic的模版题，就是建图的时候会有一点小技巧
+//或者说可以理解成这题是一道特殊的网络流，相当于寻找多条不重复的最短路径。
+//http://blog.csdn.net/huangshuai147/article/details/51354673
+//具体的可以看白书(白书上有不少错的)
 
 #include <algorithm>
 #include <iostream>
@@ -23,7 +28,7 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-const int M = 20;
+const int M = 100010;
 const int INF = 0x3f3f3f3f;
 
 struct Edge
@@ -52,7 +57,6 @@ void addEdge(int from, int to, int cap)
 
 void bfs(int s)
 {
-	printf("bfs : : begin\n");
 	memset(level, -1, sizeof(level));
 	queue<int> Q;
 	level[s] = 0;
@@ -68,7 +72,6 @@ void bfs(int s)
 			}
 		}
 	}
-	printf("bfs : : end\n");
 }
 
 int dfs(int v, int t, int f)
@@ -77,17 +80,14 @@ int dfs(int v, int t, int f)
 	for(int i=0;i<iMap[v].size();i++){
 		Edge &e = iMap[v][i];
 		if(e.cap > 0 && level[v] < level[e.to]){
-			printf("dfs(%d %d %d)\n", e.to, t, min(f, e.cap));
 			int d = dfs(e.to, t, min(f, e.cap));
 			if(d > 0){
 				e.cap -= d;
 				iMap[e.to][e.rev].cap += d;
-				printf("out : : dfs(%d %d %d)\n", e.to, t, min(f, e.cap));
 				return d;
 			}
 		}
 	}
-	printf("out\n");
 	return 0;
 }
 
@@ -108,16 +108,35 @@ int maxFlow(int s, int t)
 
 int main(void)
 {
+	while(~scanf("%d%d%d", &N, &F, &D)){
+		int food, drink, v;
+		for(int i=0;i<M;i++){
+			iMap[i].clear();
+		}
+		for(int i=1;i<=N;i++){
+			scanf("%d%d", &food, &drink);
+			for(int j=1;j<=food;j++){
+				scanf("%d", &v);
+				addEdge(v, F+i, 1);//建左边的交叉边
+			}
+			for(int j=1;j<=drink;j++){
+				scanf("%d", &v);
+				addEdge(F+N+i, F+N+N+v, 1);//建右边的交叉边
+			}
+		}
 		int s = 0;
-		int t = 4;
-		addEdge(0, 1, 10);
-		addEdge(0, 2, 2);
-		addEdge(1, 2, 6);
-		addEdge(1, 3, 6);
-		addEdge(3, 2, 3);
-		addEdge(3, 4, 8);
-		addEdge(2, 4, 5);
+		int t = N+N+F+D+1;
+
+		for(int i=1;i<=F;i++){
+			addEdge(s, i, 1);//源点和所有的食物
+		}
+		for(int i=1;i<=N;i++){
+			addEdge(F+i, F+i+N, 1);//左边的牛和右边的牛
+		}
+		for(int i=1;i<=D;i++){
+			addEdge(F+N+N+i, t, 1);//所有饮料和汇点
+		}
 		printf("%d\n", maxFlow(s, t));
-	
+	}
 	return 0;
 }

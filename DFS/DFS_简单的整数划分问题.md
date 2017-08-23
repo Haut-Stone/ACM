@@ -29,7 +29,7 @@
 
 ## 思路
 
-```
+```cpp
 int n;
 int ans;
 

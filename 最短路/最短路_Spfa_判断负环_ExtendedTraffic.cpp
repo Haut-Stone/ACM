@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-05-31 22:10:50
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-06-01 20:38:28
+* @Last Modified time: 2017-08-21 20:39:18
 */
 
 //好难啊。。这题。。
@@ -122,7 +122,7 @@ int main(void)
 			scanf("%d", &c[i]);
 		}
 		printf("%d\n", cas);
-		spfa(n, Q);
+		spfa(vertexs, Q);
 	}
 	return 0;
 }

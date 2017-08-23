@@ -20,6 +20,11 @@
 </p>
 <br>
 
+<!-- 图片居中 -->
+<!-- <div align="center">
+  <img src="https://github.com/Haut-Stone/Shall-We-Talk/raw/master/Photos/48_animations_dribbble.gif">
+</div> -->
+
 ## 题目
 
 >[这里是题目哦](https://github.com/Haut-Stone)
