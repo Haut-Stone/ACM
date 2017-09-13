@@ -1,14 +1,17 @@
 /*
 * Created by ShiJiahuan(li) in haut.
-* for more please visit www.shallweitalk.com
+* For more please visit www.shallweitalk.com.
 * 
 * Copyright 2017 SJH. All rights reserved.
 *
 * @Author: Haut-Stone
-* @Date:   2017-08-04 20:46:48
+* @Date:   2017-09-02 13:32:26
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-09-02 13:32:34
+* @Last Modified time: 2017-09-02 13:32:58
 */
+
+//这东西。。不做评论了，没意思
+//
 
 #include <algorithm>
 #include <iostream>
