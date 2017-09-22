@@ -1,14 +1,17 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-09-22 19:42:40
- */
+* Created by ShiJiahuan(li) in haut.
+* For more please visit www.shallweitalk.com.
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-09-22 19:30:11
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-09-22 19:44:27
+*/
+
+//多校脸萌,其实是一个简单的深搜
+//http://blog.csdn.net/liu940204/article/details/51934369
 
 #include <algorithm>
 #include <iostream>
