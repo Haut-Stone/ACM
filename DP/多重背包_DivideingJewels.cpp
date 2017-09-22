@@ -1,14 +1,14 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-09-21 19:26:12
- */
+* Created by ShiJiahuan(li) in haut.
+* For more please visit www.shallweitalk.com.
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-09-21 19:25:39
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-09-21 19:26:05
+*/
 
 #include <algorithm>
 #include <iostream>
@@ -25,7 +25,6 @@ using namespace std;
 
 
 const int N = 50010;
-const int INF = 0x3f3f3f3f;
 
 int a[N];
 int dp[N];
