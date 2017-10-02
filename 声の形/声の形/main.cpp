@@ -6,8 +6,8 @@
  *
  * @Author: Haut-Stone
  * @Date:   2017-01-24 11:54:11
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-01-24 17:24:44
+ * @Last Modified by:   li
+ * @Last Modified time: 2017-10-01 15:50:13
  */
 
 #include <iostream>
@@ -20,6 +20,17 @@
 #include <vector>
 using namespace std;
 
-const int N = 110;
+const int N = 100;
 
+int a[N];
+
+int main(void)
+{
+	int T;
+	scanf("%d", &T);
+	while(T--){
+		
+	}
+	return 0;
+}
 
