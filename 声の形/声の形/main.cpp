@@ -1,35 +1,57 @@
-/*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-01-24 11:54:11
- * @Last Modified by:   li
- * @Last Modified time: 2017-10-01 15:50:13
- */
-
 #include <iostream>
-#include <cstdio>
-#include <algorithm>
-#include <cmath>
-#include <cstring>
+#include <string>
 #include <map>
-#include <stack>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
-const int N = 100;
+const long long INF = 4e9 + 10;
 
-int a[N];
+long long negativeNumber1;
+long long negativeNumber2;
+long long positiveNumber1;
+long long positiveNumber2;
+long long a, b;
 
 int main(void)
 {
-	int T;
-	scanf("%d", &T);
+	long long T;
+	scanf("%lld", &T);
 	while(T--){
-		
+		long long n;
+		negativeNumber1 = negativeNumber2 = 0;
+		positiveNumber1 = positiveNumber2 = 0;
+		scanf("%lld", &n);
+		long long solo;
+		for(long long i=0;i<n;i++){
+			scanf("%lld", &solo);
+			if(solo < 0){
+				negativeNumber2 = min(solo, negativeNumber2);
+				if(negativeNumber2 < negativeNumber1){
+					swap(negativeNumber1, negativeNumber2);
+				}
+			}else if(solo > 0){
+				positiveNumber2 = max(solo, positiveNumber2);
+				if(positiveNumber2 > positiveNumber1){
+					swap(positiveNumber2, positiveNumber1);
+				}
+			}
+		}
+		if(negativeNumber1 == 0 || negativeNumber2 == 0){
+			a = INF;
+		}
+		if(positiveNumber1 == 0 || positiveNumber2 == 0){2
+			b = INF;
+		}
+		if(a == INF && b == INF){
+			printf("%d\n", 0);
+		}else if(a == INF && b != INF){
+			printf("%lld\n", positiveNumber2*positiveNumber1);
+		}else if(a != INF && b == INF){
+			printf("%lld\n", negativeNumber1*negativeNumber2);
+		}else{
+			printf("%lld\n", max(positiveNumber1*positiveNumber2, negativeNumber1*negativeNumber2));
+		}
 	}
 	return 0;
 }
