@@ -7,10 +7,11 @@
 * @Author: Haut-Stone
 * @Date:   2017-04-22 19:25:30
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-06-08 20:04:14
+* @Last Modified time: 2017-10-06 16:13:11
 */
 
 //这里是校赛的补题。http://218.28.220.249:50015/JudgeOnline/contest.php?cid=1020
+
 #define A false
 #define B false
 #define C false

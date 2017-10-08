@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-08-04 20:46:48
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-09-24 13:04:30
+* @Last Modified time: 2017-10-05 19:57:47
 */
 
 #include <algorithm>
@@ -23,27 +23,31 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-int n,m,k,ans,power;
-int r[105],c[105],dp[1005][505];
+const int N = 10;
 
-int main(){
-	scanf("%d%d%d",&n,&m,&k);
-	for(int i=1;i<=k;++i){
-		scanf("%d%d",&r[i],&c[i]);
-	}
-	for(int i=1;i<=k;++i){
-		for(int p=n;p>=r[i];--p){
-			for(int q=m;q>=c[i];--q){
-				dp[p][q]=max(dp[p][q],dp[p-r[i]][q-c[i]]+1);
+int dp[N];
+int value[N];
+int weight[N];
+int cnt[N];
+
+
+
+int main(void)
+{
+	int n, m;
+	while(~scanf("%d%d", &n, &m)){
+		memset(dp, 0, sizeof(dp));
+		for(int i=1;i<=n;i++){
+			scanf("%d%d%d", &value[i], &weight[i], &cnt[i]);
+		}
+		for(int i=1;i<=n;i++){
+			for(int k=1;k<=cnt[i];k++){
+				for(int j=m;j>=weight[i];j--){
+					dp[j] = max(dp[j], dp[j-weight[i]] + value[i]);
+				}
 			}
 		}
+		printf("%d\n", dp[n]);
 	}
-	ans=0;
-	power=m;
-	for(int i=1;i<=m;++i){
-		if (dp[n][i]>ans){
-			ans=dp[n][i]; power=m-i;
-		}
-	}
-	printf("%d %d",ans,power);
+	return 0;
 }

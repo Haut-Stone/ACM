@@ -1,58 +1,32 @@
-#include <iostream>
-#include <string>
-#include <map>
-#include <vector>
+/*
+ * Created by ShiJiahuan(li) in haut.
+ * for more please visit www.shallweitalk.com
+ *
+ * Copyright 2017 SJH. All rights reserved.
+ *
+ * @Author: Haut-Stone
+ * @Date:   2017-08-04 20:46:48
+ * @Last Modified by:   Haut-Stone
+ * @Last Modified time: 2017-09-24 13:04:30
+ */
+
 #include <algorithm>
+#include <iostream>
+#include <cstring>
+#include <vector>
+#include <cstdio>
+#include <queue>
+#include <stack>
+#include <cmath>
+#include <map>
+#include <set>
+#define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
-
-const long long INF = 4e9 + 10;
-
-long long negativeNumber1;
-long long negativeNumber2;
-long long positiveNumber1;
-long long positiveNumber2;
-long long a, b;
 
 int main(void)
 {
-	long long T;
-	scanf("%lld", &T);
-	while(T--){
-		long long n;
-		negativeNumber1 = negativeNumber2 = 0;
-		positiveNumber1 = positiveNumber2 = 0;
-		scanf("%lld", &n);
-		long long solo;
-		for(long long i=0;i<n;i++){
-			scanf("%lld", &solo);
-			if(solo < 0){
-				negativeNumber2 = min(solo, negativeNumber2);
-				if(negativeNumber2 < negativeNumber1){
-					swap(negativeNumber1, negativeNumber2);
-				}
-			}else if(solo > 0){
-				positiveNumber2 = max(solo, positiveNumber2);
-				if(positiveNumber2 > positiveNumber1){
-					swap(positiveNumber2, positiveNumber1);
-				}
-			}
-		}
-		if(negativeNumber1 == 0 || negativeNumber2 == 0){
-			a = INF;
-		}
-		if(positiveNumber1 == 0 || positiveNumber2 == 0){2
-			b = INF;
-		}
-		if(a == INF && b == INF){
-			printf("%d\n", 0);
-		}else if(a == INF && b != INF){
-			printf("%lld\n", positiveNumber2*positiveNumber1);
-		}else if(a != INF && b == INF){
-			printf("%lld\n", negativeNumber1*negativeNumber2);
-		}else{
-			printf("%lld\n", max(positiveNumber1*positiveNumber2, negativeNumber1*negativeNumber2));
-		}
-	}
+	char ch = 'A';
+	ch = getchar();
+	printf("%d\n", ch);
 	return 0;
 }
-
