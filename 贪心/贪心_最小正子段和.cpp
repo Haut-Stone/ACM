@@ -1,14 +1,17 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-08-04 20:46:48
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-09-24 13:04:30
- */
+* Created by ShiJiahuan(li) in haut.
+* For more please visit www.shallweitalk.com.
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-10-09 21:53:52
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-10-09 21:55:45
+*/
+
+//嗯，很好的一道题，可是就是不太明白为什么要排序。
+//http://blog.csdn.net/f_zyj/article/details/52089537
 
 #include <algorithm>
 #include <iostream>
@@ -20,11 +23,9 @@
 #include <cmath>
 #include <map>
 #include <set>
-#define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
 const int N = 50010;// 50010
-const int INF = 0x3f3f3f3f;
 
 struct Node
 {
