@@ -23,56 +23,83 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-const int N = 50010;// 50010
-const int INF = 0x3f3f3f3f;
+const int N = 10100;
+const int M = 11;
 
 struct Node
 {
-	long long sum;
-	int pos;
-}node[N];
-
-int n;
+	char a[M];
+	int num;
+	int len;
+}num[N];
 
 bool cmp(Node a, Node b)
 {
-	if(a.sum == b.sum){
-		return a.pos > b.pos;
+	if(a.len == b.len){
+		return a.num < b.num;
 	}
-	return a.sum < b.sum;
+	
+	int lenMin = a.len > b.len ? b.len : a.len;
+	
+	for(int i=0;i<lenMin;i++){
+		if(a.a[i] != b.a[i]){
+			return a.a[i] < b.a[i];
+		}
+	}
+	
+	if(a.len > b.len){
+		int i = 0;
+		while(a.a[lenMin] == a.a[i]){
+			lenMin++;
+			i++;
+		}
+		if(lenMin == a.len){
+			return a.a[1] > a.a[0];
+		}
+		return a.a[lenMin] < a.a[i];
+	}else{
+		int i = 0;
+		while(b.a[lenMin] == b.a[i]){
+			lenMin++;
+			i++;
+		}
+		if(lenMin == b.len){
+			return b.a[1] < b.a[0];
+		}
+		return !(b.a[lenMin] < b.a[i]);
+	}
 }
 
 int main(void)
 {
-	long long sum = 0;
-	long long temp;
-	long long res = 0;
-	bool flag = false;
+	int n;
+	cin>>n;
 	
-	node[0].pos = 0;
-	node[0].sum = 0;
-	
-	scanf("%d", &n);
-	
-	for(int i=1;i<=n;i++){
-		scanf("%lld", &temp);
-		sum += temp;
-		node[i].pos = i;
-		node[i].sum = sum;
+	int len = 0;
+	for(int i=0;i<n;i++){
+		scanf("%s", num[i].a);
+		num[i].num = atoi(num[i].a);
+		num[i].len = (int)strlen(num[i].a);
+		len += num[i].len;
 	}
+	sort(num, num+n, cmp);
 	
-	sort(node, node+n+1, cmp);
-	
-	for(int i=1;i<=n;i++){
-		if(node[i].pos > node[i-1].pos && node[i].sum > node[i-1].sum){
-			if(!flag){
-				flag = true;
-				res = node[i].sum - node[i-1].sum;
-			}else{
-				res = min(res, node[i].sum - node[i-1].sum);
+	int flag = 0;
+	for(int i=0;i<n;i++){
+		if(flag + num[i].len < 1000){
+			flag += num[i].len;
+			cout<<num[i].a;
+		}else{
+			for(int j=0;j<num[i].len;j++){
+				cout<<num[i].a[j];
+				if(++flag == 1000){
+					cout<<'\n';
+					flag = num[i].len - j - 1;
+					printf("%s", num[i].a + j + 1);
+					break;
+				}
 			}
 		}
 	}
-	printf("%lld", res);
 	return 0;
 }
