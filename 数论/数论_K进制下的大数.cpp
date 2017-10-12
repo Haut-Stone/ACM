@@ -1,14 +1,17 @@
 /*
- * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
- *
- * Copyright 2017 SJH. All rights reserved.
- *
- * @Author: Haut-Stone
- * @Date:   2017-08-04 20:46:48
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-09-24 13:04:30
- */
+* Created by ShiJiahuan(li) in haut.
+* For more please visit www.shallweitalk.com.
+* 
+* Copyright 2017 SJH. All rights reserved.
+*
+* @Author: Haut-Stone
+* @Date:   2017-10-12 20:39:50
+* @Last Modified by:   Haut-Stone
+* @Last Modified time: 2017-10-12 20:41:07
+*/
+
+//这道题还是主要依靠数的性质，将各位的数字加起来求和。对可能出现的数字取余
+//https://www.51nod.com/onlineJudge/questionCode.html#!problemId=1116
 
 #include <algorithm>
 #include <iostream>
