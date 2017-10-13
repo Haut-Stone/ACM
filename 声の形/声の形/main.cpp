@@ -23,39 +23,17 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-const int N = 100000 + 10;
-const int MAXK = 36;
-
-char a[N];
-
 int main(void)
 {
-	scanf("%s", a);
-	int len = (int)strlen(a);
-	int sum = 0;
-	int MINK = 2;
-	
-	for(int i=0;i<len;i++){
-		if(isdigit(a[i])){
-			MINK = max(MINK, a[i] - '0' + 1);
-			sum += a[i] - '0';
+	long long n, k, c;
+	while(cin>>n>>k>>c){
+		long long ans = k/n*n;
+		if(ans >= c){
+			printf("%lld\n", c);
 		}else{
-			MINK = max(MINK, a[i] - 'A' + 11);
-			sum += a[i] - 'A' + 10;
+			ans = (n - k/(k/n+1)) + c;
+			printf("%lld\n", ans);
 		}
-	}
-	
-	bool flag = false;
-	for(int i=MINK;i<=MAXK;i++){
-		if(sum % (i-1) == 0){
-			flag = true;
-			printf("%d\n", i);
-			break;
-		}
-	}
-	if(!flag){
-		printf("No Solution\n");
 	}
 	return 0;
 }
-

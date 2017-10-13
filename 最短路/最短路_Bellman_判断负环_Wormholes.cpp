@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-05-27 12:30:07
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-05-28 10:05:28
+* @Last Modified time: 2017-10-12 21:41:16
 */
 
 //POJ 3259 能回到过去的条件就是找到一个负环就好了。

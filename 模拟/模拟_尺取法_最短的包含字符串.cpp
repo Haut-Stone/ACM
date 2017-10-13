@@ -1,16 +1,17 @@
 /*
 * Created by ShiJiahuan(li) in haut.
-* for more please visit www.shallweitalk.com
+* For more please visit www.shallweitalk.com.
 * 
 * Copyright 2017 SJH. All rights reserved.
 *
 * @Author: Haut-Stone
-* @Date:   2017-08-04 20:46:48
+* @Date:   2017-10-13 22:29:55
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-10-13 22:30:54
+* @Last Modified time: 2017-10-13 22:30:44
 */
 
-
+//类似于白书上的模拟蠕虫法.
+//https://www.51nod.com/onlineJudge/questionCode.html#!problemId=1127
 
 #include <algorithm>
 #include <iostream>
