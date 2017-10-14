@@ -5,9 +5,9 @@
  * Copyright 2017 SJH. All rights reserved.
  *
  * @Author: Haut-Stone
- * @Date:   2017-08-04 20:46:48
+ * @Date:   2017-01-22 11:12:17
  * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-09-24 13:04:30
+ * @Last Modified time: 2017-10-01 12:03:20
  */
 
 #include <algorithm>
@@ -23,17 +23,13 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-int main(void)
+const int N = 1e6 + 10;
+const long long INF = 1e17+10;
+
+struct Node
 {
-	long long n, k, c;
-	while(cin>>n>>k>>c){
-		long long ans = k/n*n;
-		if(ans >= c){
-			printf("%lld\n", c);
-		}else{
-			ans = (n - k/(k/n+1)) + c;
-			printf("%lld\n", ans);
-		}
-	}
-	return 0;
-}
+	int next;
+	int to;
+	long long w;//有权值的话，这一句启用
+}edge[N*4];
+
