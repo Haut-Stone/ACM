@@ -1,13 +1,13 @@
 /*
  * Created by ShiJiahuan(li) in haut.
- * for more please visit www.shallweitalk.com
+ * For more please visit www.shallweitalk.com.
  *
  * Copyright 2017 SJH. All rights reserved.
  *
- * @Author: Haut-Stone
- * @Date:   2017-01-22 11:12:17
- * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-10-01 12:03:20
+ * @Author: li
+ * @Date:   2017-10-17 19:37:58
+ * @Last Modified by:   li
+ * @Last Modified time: 2017-10-17 19:38:09
  */
 
 #include <algorithm>
@@ -23,13 +23,4 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
-const int N = 1e6 + 10;
-const long long INF = 1e17+10;
-
-struct Node
-{
-	int next;
-	int to;
-	long long w;//有权值的话，这一句启用
-}edge[N*4];
 

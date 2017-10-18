@@ -7,7 +7,7 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-28 11:10:13
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-08-19 19:00:47
+* @Last Modified time: 2017-10-17 18:36:13
 */
 
 #include <algorithm>
@@ -22,10 +22,3 @@
 #include <set>
 using namespace std;
 
-const int N = 100;
-
-int main(void)
-{
-	
-	return 0;
-}
