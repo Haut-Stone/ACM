@@ -2,105 +2,35 @@
  * Created by ShiJiahuan(li) in haut.
  * for more please visit www.shallweitalk.com
  *
- * Copyright 2017 SJH. All rights reserved.
+ * Copyright 2016 SJH. All rights reserved.
  *
  * @Author: Haut-Stone
- * @Date:   2017-08-02 15:38:22
+ * @Date:   2017-01-19 17:51:54
  * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-08-02 21:16:45
+ * @Last Modified time: 2017-01-19 17:58:39
  */
-
-//HDU 1671
-//字典树的基础题，主要是加上判断，坑的是居然还要自己删内存 = =
-
-#include <algorithm>
 #include <iostream>
-#include <cstring>
-#include <vector>
 #include <cstdio>
-#include <queue>
-#include <stack>
+#include <algorithm>
 #include <cmath>
-#include <map>
-#include <set>
-#define INPUT_TEST freopen("in.txt", "r", stdin)
+#include <cstring>
 using namespace std;
 
-const int N = 110;
-const int NUMBER_SIZE = 10;
-int ans;
+//在c++中有一个传说，大学里学习的运算符是不完整的，有一些鲜为人知的运算符不为人知。
+//你可能会说是异或。。。
+//不不不
+//少年你太天真了23333
+//不多说，上代码 talk is cheap show me the code
 
-struct Node
-{
-	int count;
-	int isLast;
-	Node* children[NUMBER_SIZE];
-	Node(){
-		count = 0;
-		isLast = 0;
-		for(int i=0;i<NUMBER_SIZE;i++){
-			children[i] = NULL;
-		}
-	}
-};
-
-Node* root;
-
-void insert(char str[])
-{
-	Node* current = root;
-	int len = (int)strlen(str);
-	for(int i=0;i<len;i++){
-		int number = str[i] - '0';
-		if(current->children[number] == NULL){
-			current->children[number] = new Node;
-			current = current->children[number];
-			(current->count)++;
-		}else{
-			if(current->children[number]->isLast > 0){
-				ans = 1;
-				return;
-			}
-			current = current->children[number];
-			(current->count)++;
-		}
-	}
-	(current->isLast)++;
-	if(current->count > 1){
-		ans = 1;
-	}
-}
-
-void del(Node* root)
-{
-	for(int i=0;i<NUMBER_SIZE;i++){
-		if(root->children[i] != NULL){
-			del(root->children[i]);
-		}
-	}
-	free(root);
-}
 
 int main(void)
 {
-	int T;
-	int n;
-	char str[N];
-	scanf("%d", &T);
-	while(T--){
-		scanf("%d", &n);
-		root = new Node;
-		for(int i=0;i<n;i++){
-			scanf("%s", str);
-			if(ans == 0) insert(str);
-		}
-		if(ans){
-			printf("NO\n");
-		}else{
-			printf("YES\n");
-		}
-		ans = 0;
-		del(root);
+	int i=100;
+	while(0 <---------- i){
+		printf("%d\n", i);
 	}
+	//运行下试试？
+	//这就是趋近于运算符，箭头的长度代表了趋近的速度。
+	//怎么样，amazing 吧。。2333333
 	return 0;
 }
