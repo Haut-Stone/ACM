@@ -1,19 +1,20 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<iostream>
+#define INPUT_TEST freopen("/Users/li/Desktop/in.txt", "r", stdin)
+#define OUTPUT_TEST freopen("/Users/li/Desktop/in.txt", "w", stdout)
+using namespace std;
 
 int main()
 {
-	int a, k, n;
-	scanf("%d%d%d", &a, &k, &n);
-	int sum = 0;
-	while(true) {
-		sum++;
-		n-=a;
-		if(sum % k == 0)
-			n+=a;
-		if(n < 0)
-			break;
+//	OUTPUT_TEST;
+	srand((unsigned)time(NULL));
+	int n;
+	n = 1000;
+	int t = (rand() % (n - 0)) + 0;
+	printf("%d\n", t);
+	for(int i=0;i<t;i++){
+		printf("%d", (rand() % (10 - 0)) + 0);
 	}
-	printf("%d\n", sum);
+	printf("\n");
 	return 0;
 }
-

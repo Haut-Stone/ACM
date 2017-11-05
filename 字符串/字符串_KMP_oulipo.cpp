@@ -7,10 +7,10 @@
 * @Author: Haut-Stone
 * @Date:   2017-07-31 20:25:23
 * @Last Modified by:   Haut-Stone
-* @Last Modified time: 2017-07-31 20:25:32
+* @Last Modified time: 2017-10-30 09:57:58
 */
 
-//
+//输出匹配串在模式串中出现的次数。
 //
 
 #include <algorithm>
