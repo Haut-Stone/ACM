@@ -1,20 +1,38 @@
 #include<stdio.h>
-#include<iostream>
-#define INPUT_TEST freopen("/Users/li/Desktop/in.txt", "r", stdin)
-#define OUTPUT_TEST freopen("/Users/li/Desktop/in.txt", "w", stdout)
-using namespace std;
 
-int main()
+const int N = 20010;
+int a[N];
+
+int max(int a, int b)
 {
-//	OUTPUT_TEST;
-	srand((unsigned)time(NULL));
-	int n;
-	n = 1000;
-	int t = (rand() % (n - 0)) + 0;
-	printf("%d\n", t);
-	for(int i=0;i<t;i++){
-		printf("%d", (rand() % (10 - 0)) + 0);
+	if(a > b){
+		return a;
+	}else{
+		return b;
 	}
-	printf("\n");
-	return 0;
+}
+
+int main(void)
+{
+	int n;
+	while(scanf("%d", &n) != EOF){
+		int sum = 0;
+		for(int i=1;i<=n;i++){
+			scanf("%d", &a[i]);
+			sum += a[i];
+		}
+		int ans = sum;
+		for(int i=3;i<=n/2;i++){
+			if(n%i) continue;
+			int step = n / i;
+			for(int k=1;k<=step;k++){
+				int temp = 0;
+				for(int j=k;j<=n;j+=step){
+					temp += a[j];
+				}
+				ans = max(ans, temp);
+			}
+		}
+		printf("%d\n", ans);
+	}
 }
