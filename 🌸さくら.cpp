@@ -7,12 +7,8 @@
  * @Author: Haut-Stone
  * @Date:   2017-01-22 11:12:17
  * @Last Modified by:   Haut-Stone
- * @Last Modified time: 2017-10-31 11:50:03
+ * @Last Modified time: 2018-02-02 19:11:07
  */
-
-
-//2015 ACM 沈阳
-//
 
 #include <algorithm>
 #include <iostream>
@@ -27,3 +23,21 @@
 #define INPUT_TEST freopen("in.txt", "r", stdin)
 using namespace std;
 
+const int N = 1000;
+
+int a[N];
+int book[N];
+
+int main(void)
+{
+	scanf("%d%d", &n);
+	for(int i=0;i<n;i++){
+		scanf("%d", &a[i]);
+	}
+	sort(a, a+n);
+	memset(book, 0, sizeof(book));
+	for(int i=0;i<n;i++){
+		
+	}
+	return 0;
+}
